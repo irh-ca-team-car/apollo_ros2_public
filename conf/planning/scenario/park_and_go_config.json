@@ -1,0 +1,203 @@
+{
+	"scenariotype": 14,
+	"parkandgoconfig": {
+		"frontobstaclebuffer": 10,
+		"headingbuffer": 0.3,
+		"mindisttodest": 10,
+		"maxsteeringpercentagewhencruise": 20
+	},
+	"stagetype": [
+		8,
+		8,
+		8,
+		8
+	],
+	"stageconfig": [
+		{
+			"stagetype": 8,
+			"enabled": true,
+			"tasktype": [
+				8,
+				2,
+				2,
+				6
+			],
+			"taskconfig": [
+				{
+					"tasktype": 8,
+					"openspaceroideciderconfig": {
+						"roitype": 3,
+						"perceptionobstaclebuffer": 0
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 6
+				}
+			]
+		},
+		{
+			"stagetype": 8,
+			"enabled": true,
+			"tasktype": [
+				8,
+				2,
+				2,
+				6
+			],
+			"taskconfig": [
+				{
+					"tasktype": 8,
+					"openspaceroideciderconfig": {
+						"roitype": 3,
+						"roilinesegmentminangle": 0.15,
+						"roilinesegmentlength": 0.2,
+						"perceptionobstaclebuffer": 0.5,
+						"endposesdistance": 10,
+						"roilongitudinalrangestart": 10,
+						"roilongitudinalrangeend": 20
+					}
+				},
+				{
+					"tasktype": 2,
+					"openspacetrajectoryproviderconfig": {
+						"openspacetrajectoryoptimizerconfig": {
+							"planneropenspaceconfig": {
+								"iterativeanchoringsmootherconfig": {
+									"scurveconfig": {
+										"accweight": 1,
+										"jerkweight": 1,
+										"kappapenaltyweight": 100,
+										"refsweight": 100,
+										"refvweight": 0
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 6
+				}
+			]
+		},
+		{
+			"stagetype": 8,
+			"enabled": true,
+			"tasktype": [
+				8,
+				2,
+				2,
+				6
+			],
+			"taskconfig": [
+				{
+					"tasktype": 8,
+					"openspaceroideciderconfig": {
+						"roitype": 3,
+						"perceptionobstaclebuffer": 0.5,
+						"endposesdistance": 5
+					}
+				},
+				{
+					"tasktype": 2,
+					"openspacetrajectoryproviderconfig": {
+						"openspacetrajectoryoptimizerconfig": {
+							"planneropenspaceconfig": {
+								"iterativeanchoringsmootherconfig": {
+									"scurveconfig": {
+										"accweight": 1,
+										"jerkweight": 1,
+										"kappapenaltyweight": 100,
+										"refsweight": 100,
+										"refvweight": 0
+									}
+								}
+							}
+						}
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 6
+				}
+			]
+		},
+		{
+			"stagetype": 8,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2,
+				1
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1,
+					"pathlaneborrowdeciderconfig": {
+						"allowlaneborrowing": true
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1,
+					"pathdeciderconfig": {
+						"staticobstaclebuffer": 0.2
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,107 @@
+{
+	"scenariotype": 0,
+	"stagetype": 1,
+	"stageconfig": {
+		"stagetype": 1,
+		"enabled": true,
+		"tasktype": [
+			2,
+			2,
+			1,
+			1,
+			1,
+			1,
+			2,
+			9,
+			1,
+			1,
+			2,
+			1,
+			2,
+			1,
+			1,
+			2,
+			1
+		],
+		"taskconfig": [
+			{
+				"tasktype": 2,
+				"learningmodelinferencetaskconfig": {
+					"modeltype": 2,
+					"cpumodelfile": "/apollo/modules/planning/data/model/cpu_test_model_cnn_lstm.json",
+					"gpumodelfile": "/apollo/modules/planning/data/model/gpu_test_model_cnn_lstm.json",
+					"usecuda": true,
+					"allowemptylearningbaseddata": true,
+					"allowemptyoutputtrajectory": true
+				}
+			},
+			{
+				"tasktype": 2,
+				"lanechangedeciderconfig": {
+					"enablelanechangeurgencycheck": true
+				}
+			},
+			{
+				"tasktype": 1,
+				"pathlaneborrowdeciderconfig": {
+					"allowlaneborrowing": true
+				}
+			},
+			{
+				"tasktype": 1,
+				"pathboundsdeciderconfig": {
+					"adcbuffercoeff": 0,
+					"isextendlaneboundstoincludeadc": false
+				}
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 1,
+				"pathreusedeciderconfig": {
+					"reusepath": true
+				}
+			},
+			{
+				"tasktype": 2,
+				"piecewisejerkpathoptimizerconfig": {
+					"pathreferencelweight": 100
+				}
+			},
+			{
+				"tasktype": 9
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			}
+		]
+	}
+}

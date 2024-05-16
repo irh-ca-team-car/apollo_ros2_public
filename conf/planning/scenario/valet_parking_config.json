@@ -1,0 +1,114 @@
+{
+	"scenariotype": 1,
+	"valetparkingconfig": {
+		"parkingspotrangetostart": 20,
+		"maxvalidstopdistance": 1
+	},
+	"stagetype": [
+		7,
+		7
+	],
+	"stageconfig": [
+		{
+			"stagetype": 7,
+			"enabled": true,
+			"tasktype": [
+				7,
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 7,
+					"openspaceprestopdeciderconfig": {
+						"stoptype": 1
+					}
+				},
+				{
+					"tasktype": 1,
+					"pathlaneborrowdeciderconfig": {
+						"allowlaneborrowing": true
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 7,
+			"enabled": true,
+			"tasktype": [
+				8,
+				2,
+				2,
+				6
+			],
+			"taskconfig": [
+				{
+					"tasktype": 8,
+					"openspaceroideciderconfig": {
+						"roitype": 1,
+						"perceptionobstaclebuffer": 0.2
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2,
+					"openspacetrajectorypartitionconfig": {
+						"headingoffsettomidpoint": 0.79,
+						"lateraloffsettomidpoint": 0.5,
+						"longitudinaloffsettomidpoint": 0.2,
+						"vehicleboxiouthresholdtomidpoint": 0.6,
+						"linearvelocitythresholdonego": 0.1
+					}
+				},
+				{
+					"tasktype": 6
+				}
+			]
+		}
+	]
+}

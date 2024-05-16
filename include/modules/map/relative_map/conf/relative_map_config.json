@@ -1,0 +1,20 @@
+{
+	"mapparam": {
+		"defaultleftwidth": 1.875,
+		"defaultrightwidth": 1.875,
+		"defaultspeedlimit": 29.06
+	},
+	"navigationlane": {
+		"minlanemarkerquality": 0.49,
+		"lanesource": 2,
+		"maxlenfromnavigationline": 250,
+		"minlenfornavigationlane": 150,
+		"maxlenfornavigationlane": 250,
+		"rationavigationlanelentospeed": 8,
+		"maxdistancetonavigationline": 15,
+		"minviewrangetouselanemarker": 0.5,
+		"minlanehalfwidth": 1.5,
+		"maxlanehalfwidth": 2,
+		"lanemarkerweight": 0.1
+	}
+}

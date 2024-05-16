@@ -1,0 +1,3 @@
+{"classifierspropertyfilepath": "./data/perception/lidar/models/fused_classifier/classifiers.property",
+"transitionpropertyfilepath": "./data/perception/lidar/models/fused_classifier/transition.property",
+"transitionmatrixalpha": 1.8}

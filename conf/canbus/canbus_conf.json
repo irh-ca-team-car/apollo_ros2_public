@@ -1,0 +1,16 @@
+{
+	"vehicleparameter": {
+		"brand": "LINCOLN_MKZ",
+		"maxenablefailattempt": 5,
+		"drivingmode": "COMPLETE_AUTO_DRIVE"
+	},
+	"cancardparameter": {
+		"brand": "ESD_CAN",
+		"type": "PCI_CARD",
+		"channelid": "CHANNEL_ID_ZERO",
+		"interface": "NATIVE"
+	},
+	"enabledebugmode": false,
+	"enablereceiverlog": false,
+	"enablesenderlog": false
+}

@@ -1,0 +1,99 @@
+{
+	"extrinsicfile": [
+		{
+			"frameid": "novatel",
+			"childframeid": "velodyne128",
+			"filepath": "data/perception/params/velodyne128_novatel_extrinsics.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "localization",
+			"childframeid": "novatel",
+			"filepath": "data/localization/msf/params/novatel_localization_extrinsics.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "front_6mm",
+			"filepath": "data/perception/params/front_6mm_extrinsics.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "front_12mm",
+			"filepath": "data/perception/params/front_12mm_extrinsics.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "radar_front",
+			"filepath": "data/perception/params/radar_front_extrinsics.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "radar_rear",
+			"filepath": "data/perception/params/radar_rear_extrinsics.yaml",
+			"enable": true
+		},{
+			"frameid": "velodyne128",
+			"childframeid": "mynteye",
+			"filepath": "data/perception/params/mynteye.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "map",
+			"filepath": "data/perception/params/zero.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "rslidar",
+			"filepath": "data/perception/params/rslidar.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "zed_front",
+			"filepath": "data/perception/params/zed_centre.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "zed_fl",
+			"filepath": "data/perception/params/zed_fl.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "zed_fr",
+			"filepath": "data/perception/params/zed_fr.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "zed_bl",
+			"filepath": "data/perception/params/zed_bl.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "velodyne128",
+			"childframeid": "zed_br",
+			"filepath": "data/perception/params/zed_br.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "world",
+			"childframeid": "campus",
+			"filepath": "data/perception/params/world_to_campus.yaml",
+			"enable": true
+		},
+		{
+			"frameid": "localization",
+			"childframeid": "car",
+			"filepath": "data/perception/params/novatel_to_soul.yaml",
+			"enable": true
+		}
+	]
+}

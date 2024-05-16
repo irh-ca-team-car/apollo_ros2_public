@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.5)
+project(apollo)
+
+add_subdirectory(adc-trajectory)
+#add_subdirectory(camera)
+#add_subdirectory(camera-adapter)
+add_subdirectory(imu)
+#add_subdirectory(microphone)
+add_subdirectory(odometry)
+#add_subdirectory(pointcloud)
+#add_subdirectory(radar)

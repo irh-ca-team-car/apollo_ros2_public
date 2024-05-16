@@ -1,0 +1,84 @@
+{
+	"header": {
+		"timestampsec": 1513033650.54,
+		"modulename": "control",
+		"sequencenum": 178878,
+		"status": {
+			"errorcode": "OK"
+		}
+	},
+	"throttle": 23.8095697712,
+	"brake": 0,
+	"steeringrate": 100,
+	"steeringtarget": 7.55487427919,
+	"gearlocation": "GEAR_DRIVE",
+	"debug": {
+		"simplelondebug": {
+			"stationreference": 0.154246755312,
+			"stationerror": 0.632305000871,
+			"stationerrorlimited": 0.632305000871,
+			"previewstationerror": 0.893405943447,
+			"speedreference": 1.18553607993,
+			"speederror": 0.157600082616,
+			"speedcontrollerinputlimited": 0.28406108279,
+			"previewspeedreference": 1.42547355316,
+			"previewspeederror": 0.397537555845,
+			"previewaccelerationreference": 1.19982684084,
+			"accelerationcmdcloseloop": 0.442030541395,
+			"accelerationcmd": 1.64185738224,
+			"accelerationlookup": 1.64185738224,
+			"speedlookup": 1.02777779102,
+			"calibrationvalue": 23.8095697712,
+			"throttlecmd": 23.8095697712,
+			"brakecmd": 0,
+			"isfullstop": false,
+			"slopeoffsetcompensation": 0.195283022971
+		},
+		"simplelatdebug": {
+			"lateralerror": -0.00518842086323,
+			"refheading": -0.896039053718,
+			"heading": -0.915010645916,
+			"headingerror": -0.0189715921978,
+			"headingerrorrate": -0.00872926895407,
+			"lateralerrorrate": -0.0194974114832,
+			"curvature": 0.013555785763,
+			"steerangle": 7.55630053366,
+			"steeranglefeedforward": 5.53780353662,
+			"steeranglelateralcontribution": 0.0539856161446,
+			"steeranglelateralratecontribution": 0.00139438744939,
+			"steerangleheadingcontribution": 1.95693281362,
+			"steerangleheadingratecontribution": 0.00618417981993,
+			"steeranglefeedback": 2.01849699704,
+			"steeringposition": 7.14893627167,
+			"refspeed": 1.02777779102,
+			"steeranglelimited": 7.55487427919
+		},
+		"inputdebug": {
+			"localizationheader": {
+				"timestampsec": 1513033650.52,
+				"modulename": "localization",
+				"sequencenum": 179018
+			},
+			"canbusheader": {
+				"timestampsec": 1513033650.53,
+				"modulename": "chassis",
+				"sequencenum": 179429
+			},
+			"trajectoryheader": {
+				"timestampsec": 1513033650.47,
+				"modulename": "planning",
+				"sequencenum": 17648
+			}
+		}
+	},
+	"signal": {
+		"turnsignal": "TURNLEFT"
+	},
+	"latencystats": {
+		"totaltimems": 3.67212295532,
+		"controllertimems": [
+			3.27324867249,
+			0.0133514404297
+		]
+	}
+}

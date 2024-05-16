@@ -1,0 +1,7 @@
+{
+"oneshotfusionmethod": "CCRFOneShotTypeFusion",
+"sequencefusionmethod": "CCRFSequenceTypeFusion",
+"enabletemporalfusion": true,
+"temporalwindow": 20.0,
+"usetrackedobjects": true
+}

@@ -1,0 +1,89 @@
+{
+	"detector_param": [
+		{
+			"plugin_param": {
+				"name": "YoloObstacleDetector",
+				"root_dir": "data/perception/production/data/perception/camera/models/yolo_obstacle_detector",
+				"config_file": "config.json"
+			},
+			"camera_name": "front_6mm"
+		},
+		{
+			"plugin_param": {
+				"name": "YoloObstacleDetector",
+				"root_dir": "data/perception/production/data/perception/camera/models/yolo_obstacle_detector",
+				"config_file": "config.json"
+			},
+			"camera_name": "front_12mm"
+		}
+	],
+	"tracker_param": {
+		"plugin_param": {
+			"name": "OMTObstacleTracker",
+			"root_dir": "data/perception/production/data/perception/camera/models/omt_obstacle_tracker",
+			"config_file": "config.json"
+		}
+	},
+	"transformer_param": {
+		"plugin_param": {
+			"name": "MultiCueObstacleTransformer",
+			"root_dir": "data/perception/production/data/perception/camera/models/multicue_obstacle_transformer",
+			"config_file": "config.json"
+		}
+	},
+	"postprocessor_param": {
+		"plugin_param": {
+			"name": "LocationRefinerObstaclePostprocessor",
+			"root_dir": "data/perception/production/data/perception/camera/models/location_refiner_obstacle_postprocessor",
+			"config_file": "config.json"
+		}
+	},
+	"gpu_id": 0,
+	"lane_param": [
+		{
+			"lane_detector_param": {
+				"plugin_param": {
+					"name": "DarkSCNNLaneDetector",
+					"root_dir": "data/perception/production/data/perception/camera/models/lane_detector/",
+					"config_file": "config_darkSCNN.json"
+				},
+				"camera_name": "front_6mm"
+			},
+			"lane_postprocessor_param": {
+				"name": "DarkSCNNLanePostprocessor",
+				"root_dir": "data/perception/production/data/perception/camera/models/lane_postprocessor/darkSCNN/",
+				"config_file": "config.json"
+			}
+		},
+		{
+			"lane_detector_param": {
+				"plugin_param": {
+					"name": "DarkSCNNLaneDetector",
+					"root_dir": "data/perception/production/data/perception/camera/models/lane_detector/",
+					"config_file": "config_darkSCNN.json"
+				},
+				"camera_name": "front_12mm"
+			},
+			"lane_postprocessor_param": {
+				"name": "DarkSCNNLanePostprocessor",
+				"root_dir": "data/perception/production/data/perception/camera/models/lane_postprocessor/darkSCNN/",
+				"config_file": "config.json"
+			}
+		}
+	],
+	"calibration_service_param": {
+		"calibrator_method": "LaneLineCalibrator",
+		"plugin_param": {
+			"name": "OnlineCalibrationService",
+			"root_dir": "",
+			"config_file": ""
+		}
+	},
+	"object_template_param": {
+		"plugin_param": {
+			"name": "ObjectTemplate",
+			"root_dir": "data/perception/production/data/perception/camera/common/object_template/",
+			"config_file": "object_template.json"
+		}
+	}
+}

@@ -1,0 +1,26 @@
+{
+	"gpuid": 0,
+	"detectorparam": [
+		{
+			"pluginparam": {
+				"name": "TrafficLightDetection",
+				"rootdir": "data/perception/production/data/perception/camera/models/traffic_light_detection",
+				"configfile": "detection.json"
+			}
+		},
+		{
+			"pluginparam": {
+				"name": "TrafficLightRecognition",
+				"rootdir": "data/perception/production/data/perception/camera/models/traffic_light_recognition",
+				"configfile": "recognition.json"
+			}
+		}
+	],
+	"trackerparam": {
+		"pluginparam": {
+			"name": "SemanticReviser",
+			"rootdir": "data/perception/production/data/perception/camera/models/traffic_light_tracker",
+			"configfile": "semantic.json"
+		}
+	}
+}

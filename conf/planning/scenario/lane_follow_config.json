@@ -1,0 +1,84 @@
+{
+	"scenariotype": 0,
+	"stagetype": 1,
+	"stageconfig": {
+		"stagetype": 1,
+		"enabled": true,
+		"tasktype": [
+			2,
+			1,
+			1,
+			1,
+			2,
+			9,
+			1,
+			1,
+			2,
+			1,
+			2,
+			1,
+			1,
+			2,
+			1
+		],
+		"taskconfig": [
+			{
+				"tasktype": 2,
+				"lanechangedeciderconfig": {
+					"enablelanechangeurgencycheck": true
+				}
+			},
+			{
+				"tasktype": 1,
+				"pathreusedeciderconfig": {
+					"reusepath": false
+				}
+			},
+			{
+				"tasktype": 1,
+				"pathlaneborrowdeciderconfig": {
+					"allowlaneborrowing": true
+				}
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 9
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 1
+			},
+			{
+				"tasktype": 2
+			}
+		]
+	}
+}

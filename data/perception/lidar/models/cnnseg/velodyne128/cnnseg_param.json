@@ -1,0 +1,30 @@
+{
+    "objectnessthresh": 0.5,
+    "confidencethresh": 0.4,
+    "confidencerange": 85.0,
+    "heightthresh": 0.5,
+    "minptsnum": 3,
+    "modeltype": "RTNet",
+    "gpuid": 0,
+    "grounddetector": "SpatioTemporalGroundDetector",
+    "roifilter": "HdmapROIFilter",
+    "removegroundpoints": true,
+    "networkparam": {
+        "instanceptblob": "instance_pt",
+        "categoryptblob": "category_score",
+        "confidenceptblob": "confidence_score",
+        "heightptblob": "height_pt",
+        "headingptblob": "heading_pt",
+        "featureblob": "data",
+        "classptblob": "class_score"
+    },
+    "featureparam": {
+        "width": 864,
+        "height": 864,
+        "pointcloudrange": 90,
+        "minheight": -5.0,
+        "maxheight": 5.0,
+        "useintensityfeature": false,
+        "useconstantfeature": false
+    }
+}

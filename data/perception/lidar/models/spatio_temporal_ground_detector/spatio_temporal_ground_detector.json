@@ -1,0 +1,8 @@
+{"gridsize": 16,
+"groundthres": 0.25,
+"roiradx": 120.0,
+"roirady": 120.0,
+"roiradz": 120.0,
+"nrsmoothiter": 5,
+"useroi": false,
+"usegroundservice": true}

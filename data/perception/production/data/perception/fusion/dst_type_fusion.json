@@ -1,0 +1,40 @@
+{
+	"cameraparams": [
+		{
+			"name": "camera_front_obstacle",
+			"validdist": 110,
+			"reliability": 0.95,
+			"reliabilityforunknown": 0.2
+		},
+		{
+			"name": "camera_front_narrow",
+			"validdist": 150,
+			"reliability": 0.5,
+			"reliabilityforunknown": 0.2
+		},
+		{
+			"name": "front_6mm",
+			"validdist": 110,
+			"reliability": 0.95,
+			"reliabilityforunknown": 0.2
+		},
+		{
+			"name": "front_12mm",
+			"validdist": 150,
+			"reliability": 0.5,
+			"reliabilityforunknown": 0.2
+		}
+	],
+	"lidarparams": [
+		{
+			"name": "velodyne_64",
+			"reliability": 0.5,
+			"reliabilityforunknown": 0.5
+		},
+		{
+			"name": "velodyne64",
+			"reliability": 0.5,
+			"reliabilityforunknown": 0.5
+		}
+	]
+}

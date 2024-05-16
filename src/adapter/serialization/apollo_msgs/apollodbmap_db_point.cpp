@@ -1,0 +1,55 @@
+#include "adapter/serialization/apollo_msgs/apollodbmap_db_point.hpp"
+namespace apollo_msgs::msg {
+    nlohmann::json to_json (const ApollodbmapDBPoint &msg) {
+        nlohmann::json obj;
+        obj["x"] = (msg.x);
+        obj["y"] = (msg.y);
+        obj["z"] = (msg.z);
+        obj["s"] = (msg.s);
+        obj["heading"] = (msg.heading);
+        return obj;
+    }
+    ApollodbmapDBPoint from_json_ApollodbmapDBPoint (nlohmann::json obj) {
+        ApollodbmapDBPoint msg;
+        if(obj.contains("x"))
+        {
+            msg.x = (obj["x"].is_string()?atof(obj["x"].get<std::string>().c_str()):obj["x"].get<double>());
+        }
+        if(obj.contains("y"))
+        {
+            msg.y = (obj["y"].is_string()?atof(obj["y"].get<std::string>().c_str()):obj["y"].get<double>());
+        }
+        if(obj.contains("z"))
+        {
+            msg.z = (obj["z"].is_string()?atof(obj["z"].get<std::string>().c_str()):obj["z"].get<double>());
+        }
+        if(obj.contains("s"))
+        {
+            msg.s = (obj["s"].is_string()?atof(obj["s"].get<std::string>().c_str()):obj["s"].get<double>());
+        }
+        if(obj.contains("heading"))
+        {
+            msg.heading = (obj["heading"].is_string()?atof(obj["heading"].get<std::string>().c_str()):obj["heading"].get<double>());
+        }
+        return msg;
+    }
+    template <>
+    ApollodbmapDBPoint from_json<ApollodbmapDBPoint>(nlohmann::json obj){
+        return from_json_ApollodbmapDBPoint(obj);
+    }
+    nlohmann::json &operator>>(nlohmann::json &os, ApollodbmapDBPoint &dt)
+    {
+        dt=from_json_ApollodbmapDBPoint(os);
+        return os;
+    }
+    std::ostream & operator<<(std::ostream & os, const ApollodbmapDBPoint & dt)
+    {
+        os << to_json(dt);
+        return os;
+    }
+    close_after_if_not_null & operator<<(close_after_if_not_null & os, const ApollodbmapDBPoint & dt)
+    {
+        os << to_json(dt);
+        return os;
+    }
+}

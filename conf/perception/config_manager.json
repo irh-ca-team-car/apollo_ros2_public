@@ -1,0 +1,428 @@
+{
+	"modelconfigs": [
+		{
+			"name": "DstExistenceFusion",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_dir",
+					"value": "./data/perception/fusion/"
+				},
+				{
+					"name": "config_file",
+					"value": "dst_existence_fusion.pt"
+				}
+			]
+		},
+		{
+			"name": "DstTypeFusion",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_dir",
+					"value": "./data/perception/fusion/"
+				},
+				{
+					"name": "config_file",
+					"value": "dst_type_fusion.pt"
+				}
+			]
+		},
+		{
+			"name": "PbfGatekeeper",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_dir",
+					"value": "./data/perception/fusion/"
+				},
+				{
+					"name": "config_file",
+					"value": "pbf_gatekeeper.pt"
+				}
+			]
+		},
+		{
+			"name": "PbfTracker",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_dir",
+					"value": "./data/perception/fusion/"
+				},
+				{
+					"name": "config_file",
+					"value": "pbf_tracker.pt"
+				}
+			]
+		},
+		{
+			"name": "ProbabilisticFusion",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_dir",
+					"value": "./data/perception/fusion/"
+				},
+				{
+					"name": "config_file",
+					"value": "probabilistic_fusion.pt"
+				}
+			]
+		},
+		{
+			"name": "CNNSegmentation",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./lidar/models/cnnseg"
+				}
+			]
+		},
+		{
+			"name": "FusedClassifier",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/fused_classifier"
+				}
+			]
+		},
+		{
+			"name": "CCRFOneShotTypeFusion",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/fused_classifier"
+				}
+			]
+		},
+		{
+			"name": "CCRFSequenceTypeFusion",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/fused_classifier"
+				}
+			]
+		},
+		{
+			"name": "GroundService",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./lidar/models/ground_service"
+				}
+			]
+		},
+		{
+			"name": "GroundServiceDetector",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/ground_service_detector"
+				}
+			]
+		},
+		{
+			"name": "HdmapROIFilter",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/roi_filter/hdmap_roi_filter"
+				}
+			]
+		},
+		{
+			"name": "LidarObstacleSegmentation",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/lidar_obstacle_pipeline"
+				}
+			]
+		},
+		{
+			"name": "LidarObstacleDetection",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/lidar_obstacle_pipeline"
+				}
+			]
+		},
+		{
+			"name": "LidarObstacleTracking",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/lidar_obstacle_pipeline"
+				}
+			]
+		},
+		{
+			"name": "MapManager",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/map_manager"
+				}
+			]
+		},
+		{
+			"name": "MlfEngine",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfTrackObjectDistance",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfTrackObjectMatcher",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfTracker",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfMotionFilter",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfMotionRefiner",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "MlfShapeFilter",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/multi_lidar_fusion"
+				}
+			]
+		},
+		{
+			"name": "NCutSegmentation",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/ncut"
+				}
+			]
+		},
+		{
+			"name": "ObjectFilterBank",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/object_filter_bank"
+				}
+			]
+		},
+		{
+			"name": "PointCloudPreprocessor",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/pointcloud_preprocessor"
+				}
+			]
+		},
+		{
+			"name": "ROIBoundaryFilter",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/object_filter_bank"
+				}
+			]
+		},
+		{
+			"name": "ROIService",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/roi_service"
+				}
+			]
+		},
+		{
+			"name": "SceneManager",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/scene_manager"
+				}
+			]
+		},
+		{
+			"name": "SpatioTemporalGroundDetector",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/lidar/models/spatio_temporal_ground_detector"
+				}
+			]
+		},
+		{
+			"name": "HDMapInput",
+			"version": "1.0.0",
+			"integerparams": [
+				{
+					"name": "hdmap_sample_step",
+					"value": 1
+				}
+			],
+			"stringparams": [
+				{
+					"name": "hdmap_file",
+					"value": "/apollo/modules/map/data/sunnyvale_big_loop/base_map.bin"
+				}
+			]
+		},
+		{
+			"name": "ContiArsPreprocessor",
+			"version": "1.0.0",
+			"floatparams": [
+				{
+					"name": "delay_time",
+					"value": 0.07000000029802322
+				}
+			]
+		},
+		{
+			"name": "ContiArsTracker",
+			"version": "1.0.0",
+			"integerparams": [
+				{
+					"name": "tracked_times_threshold",
+					"value": 3
+				}
+			],
+			"stringparams": [
+				{
+					"name": "macher_name",
+					"value": "HMMatcher"
+				},
+				{
+					"name": "chosen_filter",
+					"value": "AdaptiveKalmanFilter"
+				}
+			],
+			"doubleparams": [
+				{
+					"name": "tracking_time_window",
+					"value": 0.06
+				}
+			],
+			"boolparams": [
+				{
+					"name": "use_filter",
+					"value": false
+				}
+			]
+		},
+		{
+			"name": "FrontRadarPipeline",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "Detector",
+					"value": "ContiArsDetector"
+				},
+				{
+					"name": "RoiFilter",
+					"value": "HdmapRadarRoiFilter"
+				},
+				{
+					"name": "Tracker",
+					"value": "ContiArsTracker"
+				}
+			]
+		},
+		{
+			"name": "HMMatcher",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "root_path",
+					"value": "./data/perception/radar/models/tracker"
+				}
+			]
+		},
+		{
+			"name": "RearRadarPipeline",
+			"version": "1.0.0",
+			"stringparams": [
+				{
+					"name": "Detector",
+					"value": "ContiArsDetector"
+				},
+				{
+					"name": "RoiFilter",
+					"value": "HdmapRadarRoiFilter"
+				},
+				{
+					"name": "Tracker",
+					"value": "ContiArsTracker"
+				}
+			]
+		}
+	]
+}

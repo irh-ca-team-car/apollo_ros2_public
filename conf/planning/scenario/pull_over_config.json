@@ -1,0 +1,188 @@
+{
+	"scenariotype": 9,
+	"pulloverconfig": {
+		"startpulloverscenariodistance": 50,
+		"pullovermindistancebuffer": 10,
+		"maxdistancestopsearch": 25,
+		"maxserrortoendpoint": 0.5,
+		"maxlerrortoendpoint": 1,
+		"maxthetaerrortoendpoint": 0.2,
+		"passdestinationthreshold": 15,
+		"maxdistanceerrortoendpoint": 0.2
+	},
+	"stagetype": [
+		5,
+		5
+	],
+	"stageconfig": [
+		{
+			"stagetype": 5,
+			"enabled": true,
+			"tasktype": [
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2,
+				1
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1,
+					"pathboundsdeciderconfig": {
+						"islaneborrowing": false,
+						"ispullover": true,
+						"pulloverdestinationtoadcbuffer": 25,
+						"pulloverdestinationtopathendbuffer": 4,
+						"pulloverroadedgebuffer": 0.15,
+						"pulloverapproachlondistanceadjustfactor": 1.6
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 5,
+			"enabled": true,
+			"tasktype": [
+				7,
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 7,
+					"openspaceprestopdeciderconfig": {
+						"stoptype": 2,
+						"rightawaystopdistance": 1
+					}
+				},
+				{
+					"tasktype": 1,
+					"pathlaneborrowdeciderconfig": {
+						"allowlaneborrowing": true
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 5,
+			"enabled": true,
+			"tasktype": [
+				8,
+				2,
+				2,
+				6
+			],
+			"taskconfig": [
+				{
+					"tasktype": 8,
+					"openspaceroideciderconfig": {
+						"roitype": 2,
+						"perceptionobstaclebuffer": 0.5
+					}
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2,
+					"openspacetrajectorypartitionconfig": {
+						"headingoffsettomidpoint": 0.79,
+						"lateraloffsettomidpoint": 0.5,
+						"longitudinaloffsettomidpoint": 0.2,
+						"vehicleboxiouthresholdtomidpoint": 0.8,
+						"linearvelocitythresholdonego": 0.2
+					}
+				},
+				{
+					"tasktype": 6
+				}
+			]
+		}
+	]
+}

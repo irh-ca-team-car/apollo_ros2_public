@@ -1,0 +1,20 @@
+{
+	"maxconstraintinterval": 5,
+	"longitudinalboundarybound": 2,
+	"maxlateralboundarybound": 0.5,
+	"minlateralboundarybound": 0.1,
+	"resolution": 0.02,
+	"curbshift": 0.2,
+	"lateralbuffer": 0.2,
+	"spiral": {
+		"maxdeviation": 0.05,
+		"piecewiselength": 10,
+		"maxiteration": 500,
+		"opttol": 0.000001,
+		"optacceptabletol": 0.0001,
+		"optacceptableiteration": 15,
+		"weightcurvelength": 1,
+		"weightkappa": 1,
+		"weightdkappa": 100
+	}
+}

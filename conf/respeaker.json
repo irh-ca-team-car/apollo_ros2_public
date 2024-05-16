@@ -1,0 +1,18 @@
+{
+	"microphonemodel": 1,
+	"chunk": 8192,
+	"samplerate": 48000,
+	"recordseconds": 0.17,
+	"samplewidth": 2,
+	"channelname": "/apollo/sensor/microphone",
+	"frameid": "respeaker",
+	"micdistance": 0.065,
+	"channeltype": [
+		1,
+		2,
+		2,
+		2,
+		2,
+		3
+	]
+}

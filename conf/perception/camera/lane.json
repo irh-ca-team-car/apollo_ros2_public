@@ -1,0 +1,47 @@
+{
+	"gpuid": 0,
+	"laneparam": [
+		{
+			"lanedetectorparam": {
+				"pluginparam": {
+					"name": "DarkSCNNLaneDetector",
+					"rootdir": "data/perception/production/data/perception/camera/models/lane_detector/",
+					"configfile": "config_darkSCNN.json"
+				},
+				"cameraname": "front_6mm"
+			},
+			"lanepostprocessorparam": {
+				"name": "DarkSCNNLanePostprocessor",
+				"rootdir": "data/perception/production/data/perception/camera/models/lane_postprocessor/darkSCNN/",
+				"configfile": "config.json"
+			}
+		},
+		{
+			"lanedetectorparam": {
+				"pluginparam": {
+					"name": "DarkSCNNLaneDetector",
+					"rootdir": "data/perception/production/data/perception/camera/models/lane_detector/",
+					"configfile": "config_darkSCNN.json"
+				},
+				"cameraname": "front_12mm"
+			},
+			"lanepostprocessorparam": {
+				"name": "DarkSCNNLanePostprocessor",
+				"rootdir": "data/perception/production/data/perception/camera/models/lane_postprocessor/darkSCNN/",
+				"configfile": "config.json"
+			}
+		}
+	],
+	"calibrationserviceparam": {
+		"pluginparam": {
+			"name": "OnlineCalibrationService",
+			"rootdir": "",
+			"configfile": ""
+		},
+		"calibratormethod": "LaneLineCalibrator"
+	},
+	"debugparam": {
+		"laneoutdir": "/apollo/debug_output/lane/",
+		"calibrationoutdir": "/apollo/debug_output/calib/"
+	}
+}

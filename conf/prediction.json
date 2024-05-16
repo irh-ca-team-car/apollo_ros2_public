@@ -1,0 +1,76 @@
+{
+	"topicconf": {
+		"adccontainertopicname": "/apollo/prediction/adccontainer",
+		"containertopicname": "/apollo/prediction/container",
+		"evaluatortopicname": "/apollo/prediction/evaluator",
+		"localizationtopic": "/apollo/localization/pose",
+		"perceptionobstacletopic": "/apollo/prediction/obstacles",
+		"perceptionobstaclestopicname": "/apollo/prediction/perception_obstacles",
+		"planningtrajectorytopic": "/apollo/planning",
+		"predictiontopic": "/apollo/prediction",
+		"storytellingtopic": "/apollo/storytelling"
+	},
+	"obstacleconf": [
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 0,
+			"prioritytype": 1,
+			"evaluatortype": 10,
+			"predictortype": 7
+		},
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 0,
+			"prioritytype": 2,
+			"evaluatortype": 3,
+			"predictortype": 3
+		},
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 5,
+			"prioritytype": 1,
+			"evaluatortype": 10,
+			"predictortype": 7
+		},
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 5,
+			"prioritytype": 2,
+			"evaluatortype": 4,
+			"predictortype": 0
+		},
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 1,
+			"predictortype": 1
+		},
+		{
+			"obstacletype": 3,
+			"obstaclestatus": 4,
+			"evaluatortype": 10,
+			"predictortype": 1
+		},
+		{
+			"obstacletype": 4,
+			"obstaclestatus": 0,
+			"evaluatortype": 5,
+			"predictortype": 0
+		},
+		{
+			"obstacletype": 4,
+			"obstaclestatus": 1,
+			"predictortype": 1
+		},
+		{
+			"obstacletype": 0,
+			"obstaclestatus": 0,
+			"evaluatortype": 0,
+			"predictortype": 0
+		},
+		{
+			"obstacletype": 0,
+			"obstaclestatus": 1,
+			"predictortype": 1
+		}
+	]
+}

@@ -1,0 +1,28 @@
+{
+	"modelparam": {
+		"modelname": "darkSCNN",
+		"protofile": "deploy.prototxt.bin",
+		"weightfile": "deploy.caffemodel.bin",
+		"inputoffsety": 312,
+		"inputoffsetx": 0,
+		"cropheight": 768,
+		"cropwidth": 1920,
+		"resizeheight": 480,
+		"resizewidth": 640,
+		"meanb": 95,
+		"meang": 99,
+		"meanr": 96,
+		"isbgr": true,
+		"confidencethreshold": 0.6,
+		"vptmeandx": 0,
+		"vptmeandy": -77.284,
+		"vptstddx": 103.109,
+		"vptstddy": 95.273,
+		"modeltype": "RTNet"
+	},
+	"netparam": {
+		"segblob": "softmax",
+		"vptblob": "fc_out",
+		"inputblob": "data"
+	}
+}

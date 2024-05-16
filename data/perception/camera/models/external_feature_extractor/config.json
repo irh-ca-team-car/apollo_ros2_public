@@ -1,0 +1,8 @@
+{
+	"modeltype": "CaffeNet",
+	"protofile": "deploy_new.pt",
+	"weightfile": "deploy_new.caffemodel",
+	"inputblob": "roi_feature",
+	"featblob": "conv3_3",
+	"featurefile": "feature.pt"
+}

@@ -1,0 +1,271 @@
+{
+	"scenariotype": 4,
+	"stopsignunprotectedconfig": {
+		"startstopsignscenariodistance": 4,
+		"watchvehiclemaxvalidstopdistance": 5,
+		"maxvalidstopdistance": 2,
+		"stopdurationsec": 1,
+		"minpasssdistance": 3,
+		"stoptimeoutsec": 8,
+		"creeptimeoutsec": 10
+	},
+	"stagetype": [
+		3,
+		3,
+		3,
+		3
+	],
+	"stageconfig": [
+		{
+			"stagetype": 3,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 3,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 3,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1,
+					"creepdeciderconfig": {
+						"stopdistance": 0.3,
+						"speedlimit": 1,
+						"maxvalidstopdistance": 0.4,
+						"minboundaryt": 6,
+						"ignoremaxstmint": 0.1,
+						"ignoreminstmins": 15
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 3,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1,
+					"pathlaneborrowdeciderconfig": {
+						"allowlaneborrowing": true
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		}
+	]
+}

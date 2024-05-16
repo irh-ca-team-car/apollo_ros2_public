@@ -1,0 +1,13 @@
+{
+	"uselidar": true,
+	"useradar": true,
+	"usecamera": true,
+	"trackermethod": "PbfTracker",
+	"dataassociationmethod": "HMAssociation",
+	"gatekeepermethod": "PbfGatekeeper",
+	"prohibitionsensors": "radar_front",
+	"maxlidarinvisibleperiod": 0.25,
+	"maxradarinvisibleperiod": 0.5,
+	"maxcamerainvisibleperiod": 0.75,
+	"maxcachedframenum": 50
+}

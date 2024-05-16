@@ -1,0 +1,6 @@
+{
+	"modeltype": "REAR_CENTERED_KINEMATIC_BICYCLE_MODEL",
+	"rckinematicbicyclemodel": {
+		"dt": 0.06
+	}
+}

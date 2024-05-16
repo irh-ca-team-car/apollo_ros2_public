@@ -1,0 +1,135 @@
+{
+	"scenariotype": 5,
+	"trafficlightprotectedconfig": {
+		"starttrafficlightscenariodistance": 5,
+		"maxvalidstopdistance": 2,
+		"minpasssdistance": 3
+	},
+	"stagetype": [
+		4,
+		4
+	],
+	"stageconfig": [
+		{
+			"stagetype": 4,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 4,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1,
+					"pathlaneborrowdeciderconfig": {
+						"allowlaneborrowing": true
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		}
+	]
+}

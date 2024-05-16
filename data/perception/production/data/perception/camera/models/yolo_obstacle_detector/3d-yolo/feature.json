@@ -1,0 +1,1 @@
+{"extractor": {"feattype": ROIPooling,"roipoolingparam": {"pooledh": 3,"pooledw": 3,"usefloor": true}}}

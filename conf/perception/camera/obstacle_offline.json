@@ -1,0 +1,72 @@
+{
+	"gpu_id": 0,
+	"detectorparam": [
+		{
+			"pluginparam": {
+				"name": "YoloObstacleDetector",
+				"rootdir": "data/perception/production/data/perception/camera/models/yolo_obstacle_detector",
+				"configfile": "config.json"
+			},
+			"cameraname": "front_6mm"
+		},
+		{
+			"pluginparam": {
+				"name": "YoloObstacleDetector",
+				"rootdir": "data/perception/production/data/perception/camera/models/yolo_obstacle_detector",
+				"configfile": "config.json"
+			},
+			"cameraname": "front_12mm"
+		}
+	],
+	"trackerparam": {
+		"pluginparam": {
+			"name": "OMTObstacleTracker",
+			"rootdir": "data/perception/production/data/perception/camera/models/omt_obstacle_tracker",
+			"configfile": "config.json"
+		}
+	},
+	"transformerparam": {
+		"pluginparam": {
+			"name": "MultiCueObstacleTransformer",
+			"rootdir": "data/perception/production/data/perception/camera/models/multicue_obstacle_transformer",
+			"configfile": "config.json"
+		}
+	},
+	"postprocessorparam": {
+		"pluginparam": {
+			"name": "LocationRefinerObstaclePostprocessor",
+			"rootdir": "data/perception/production/data/perception/camera/models/location_refiner_obstacle_postprocessor",
+			"configfile": "config.json"
+		}
+	},
+	"laneparam": {
+		"lanedetectorparam": {
+			"pluginparam": {
+				"name": "DenselineLaneDetector",
+				"rootdir": "data/perception/production/data/perception/camera/models/lane_detector/",
+				"configfile": "config.json"
+			},
+			"cameraname": "front_6mm"
+		},
+		"lanepostprocessorparam": {
+			"name": "DenselineLanePostprocessor",
+			"rootdir": "data/perception/production/data/perception/camera/models/lane_postprocessor/denseline/",
+			"configfile": "config.json"
+		}
+	},
+	"calibrationserviceparam": {
+		"pluginparam": {
+			"name": "OnlineCalibrationService",
+			"rootdir": "",
+			"configfile": ""
+		},
+		"calibratormethod": "LaneLineCalibrator"
+	},
+	"objecttemplateparam": {
+		"pluginparam": {
+			"name": "ObjectTemplate",
+			"rootdir": "data/perception/production/data/perception/camera/common/object_template/",
+			"configfile": "object_template.json"
+		}
+	}
+}

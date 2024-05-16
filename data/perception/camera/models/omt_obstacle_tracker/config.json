@@ -1,0 +1,70 @@
+{
+	"imgcapability": 14,
+	"lostage": 3,
+	"reserveage": 5,
+	"weightsamecamera": {
+		"appearance": 0.45,
+		"motion": 0.4,
+		"shape": 0.15,
+		"overlap": 0.05
+	},
+	"weightdiffcamera": {
+		"motion": 0.5,
+		"shape": 0.15,
+		"overlap": 0.35
+	},
+	"typechangecost": "type_change_cost",
+	"border": 20,
+	"targetthresh": 0.6,
+	"correcttype": false,
+	"imagedisplacement": 50,
+	"abnormalmovement": 0.4,
+	"mininitheightratio": 17,
+	"targetcombineiouthreshold": 0.6,
+	"targetparam": {
+		"velocitythreshold": 100000,
+		"velocityoutputdelay": 0,
+		"worldcenter": {
+			"initvariance": 5,
+			"measurevariance": 0.01,
+			"processvariance": 4
+		},
+		"imagecenter": {
+			"initvariance": 2500,
+			"measurevariance": 60,
+			"processvariance": 400
+		},
+		"imagewhupdaterate": 0.6,
+		"worldlhwhistory": 15,
+		"heightdiffratio": 0.2,
+		"clappingvelocity": true,
+		"worldstatehistory": 60,
+		"mincachedworldstatehistorysize": 20,
+		"mincachedvelocitysize": 25,
+		"mincachedpositionsize": 50,
+		"calcavgpositionwindowsize": 15,
+		"staticspeedthreshold": 0.5,
+		"staticspeedthresholdped": 0.3,
+		"minmovingavgspeed": 1,
+		"minmovingavgspeedped": 0.5,
+		"abnormalaccthreshold": 6,
+		"abnormalaccthresholdped": 3,
+		"abnormalvelocityheadinganglethreshold": 0.8,
+		"trackedlife": 3,
+		"typefiltervar": 0.3,
+		"largevelocityratio": 2.5,
+		"toolargevelocityratio": 1.5,
+		"meanfilterwindow": 10,
+		"directionfilterratio": 0.7,
+		"displacementthetavar": 0.25,
+		"velocitythetavar": 0.5,
+		"stablemovingspeed": 2
+	},
+	"reference": {
+		"margin": 2,
+		"minallowheight": 50,
+		"areadecay": 0.98,
+		"downsampling": 25,
+		"heightdiffratio": 0.1
+	}
+}

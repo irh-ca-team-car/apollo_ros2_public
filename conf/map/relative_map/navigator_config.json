@@ -1,0 +1,12 @@
+{
+	"enablenavigatordownsample": true,
+	"sampleparam": {
+		"straightsampleinterval": 3,
+		"smallkappasampleinterval": 1,
+		"middlekappasampleinterval": 0.4,
+		"largekappasampleinterval": 0.1,
+		"smallkappa": 0.002,
+		"middlekappa": 0.008,
+		"largekappa": 0.02
+	}
+}

@@ -1,0 +1,14 @@
+{
+	"modelconfigs": {
+		"name": "HDMapInput",
+		"version": "1.0.0",
+		"integerparams": {
+			"name": "hdmap_sample_step",
+			"value": 1
+		},
+		"string_params": {
+			"name": "hdmap_file",
+			"value": "<root>/data/map/sunnyvale_big_loop/base_map.bin"
+		}
+	}
+}

@@ -1,0 +1,8 @@
+{
+	"omitbottomlinenum": 3,
+	"lanelinepointscorethresh": 0.4,
+	"lanelinemapscorethresh": 0.6,
+	"lanelinepointminnumthresh": 2,
+	"ccvalidpixelsratio": 2,
+	"lanelinerejectdistthresh": 50
+}

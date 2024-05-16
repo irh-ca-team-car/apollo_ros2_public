@@ -1,0 +1,3632 @@
+{
+	"input": [],
+	"inputshape": [],
+	"inputdim": [],
+	"layer": [
+		{
+			"bottom": [],
+			"top": [
+				"data"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "input",
+			"type": "Input",
+			"inputparam": {
+				"shape": [
+					{
+						"dim": [
+							{
+								"low": 1,
+								"high": 0,
+								"unsigned": false
+							},
+							{
+								"low": 800,
+								"high": 0,
+								"unsigned": false
+							},
+							{
+								"low": 1440,
+								"high": 0,
+								"unsigned": false
+							},
+							{
+								"low": 3,
+								"high": 0,
+								"unsigned": false
+							}
+						]
+					}
+				]
+			}
+		},
+		{
+			"bottom": [
+				"data"
+			],
+			"top": [
+				"data_perm"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "data_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					3,
+					1,
+					2
+				]
+			}
+		},
+		{
+			"bottom": [
+				"data_perm"
+			],
+			"top": [
+				"data_scale"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "data_scale",
+			"type": "Power",
+			"powerparam": {
+				"power": 1,
+				"scale": 0.00392156885937,
+				"shift": 0
+			}
+		},
+		{
+			"bottom": [
+				"data_scale"
+			],
+			"top": [
+				"conv1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 16,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv1"
+			],
+			"top": [
+				"conv1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv1"
+			],
+			"top": [
+				"conv1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv1"
+			],
+			"top": [
+				"conv1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv1"
+			],
+			"top": [
+				"pool1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "pool1",
+			"type": "Pooling",
+			"poolingparam": {
+				"pool": 0,
+				"pad": 0,
+				"kernelsize": 2,
+				"stride": 2
+			}
+		},
+		{
+			"bottom": [
+				"pool1"
+			],
+			"top": [
+				"conv2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 32,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv2"
+			],
+			"top": [
+				"conv2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv2"
+			],
+			"top": [
+				"conv2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv2"
+			],
+			"top": [
+				"conv2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv2"
+			],
+			"top": [
+				"pool2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "pool2",
+			"type": "Pooling",
+			"poolingparam": {
+				"pool": 0,
+				"pad": 0,
+				"kernelsize": 2,
+				"stride": 2
+			}
+		},
+		{
+			"bottom": [
+				"pool2"
+			],
+			"top": [
+				"conv3_1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 64,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv3_1"
+			],
+			"top": [
+				"conv3_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv3_1"
+			],
+			"top": [
+				"conv3_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv3_1"
+			],
+			"top": [
+				"conv3_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv3_1"
+			],
+			"top": [
+				"conv3_2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 32,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv3_2"
+			],
+			"top": [
+				"conv3_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv3_2"
+			],
+			"top": [
+				"conv3_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv3_2"
+			],
+			"top": [
+				"conv3_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv3_2"
+			],
+			"top": [
+				"conv3_3"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_3",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 64,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv3_3"
+			],
+			"top": [
+				"conv3_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_3_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv3_3"
+			],
+			"top": [
+				"conv3_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_3_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv3_3"
+			],
+			"top": [
+				"conv3_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv3_3_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv3_3"
+			],
+			"top": [
+				"pool3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "pool3",
+			"type": "Pooling",
+			"poolingparam": {
+				"pool": 0,
+				"pad": 0,
+				"kernelsize": 2,
+				"stride": 2
+			}
+		},
+		{
+			"bottom": [
+				"pool3"
+			],
+			"top": [
+				"conv4_1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 128,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv4_1"
+			],
+			"top": [
+				"conv4_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv4_1"
+			],
+			"top": [
+				"conv4_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv4_1"
+			],
+			"top": [
+				"conv4_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv4_1"
+			],
+			"top": [
+				"conv4_2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 64,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv4_2"
+			],
+			"top": [
+				"conv4_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv4_2"
+			],
+			"top": [
+				"conv4_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv4_2"
+			],
+			"top": [
+				"conv4_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv4_2"
+			],
+			"top": [
+				"conv4_3"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_3",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 128,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv4_3"
+			],
+			"top": [
+				"conv4_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_3_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv4_3"
+			],
+			"top": [
+				"conv4_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_3_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv4_3"
+			],
+			"top": [
+				"conv4_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv4_3_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv4_3"
+			],
+			"top": [
+				"pool4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "pool4",
+			"type": "Pooling",
+			"poolingparam": {
+				"pool": 0,
+				"pad": 0,
+				"kernelsize": 2,
+				"stride": 2
+			}
+		},
+		{
+			"bottom": [
+				"pool4"
+			],
+			"top": [
+				"conv5_1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv5_1"
+			],
+			"top": [
+				"conv5_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv5_1"
+			],
+			"top": [
+				"conv5_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv5_1"
+			],
+			"top": [
+				"conv5_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_1"
+			],
+			"top": [
+				"conv5_2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 128,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv5_2"
+			],
+			"top": [
+				"conv5_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv5_2"
+			],
+			"top": [
+				"conv5_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv5_2"
+			],
+			"top": [
+				"conv5_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_2"
+			],
+			"top": [
+				"conv5_3"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_3",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv5_3"
+			],
+			"top": [
+				"conv5_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_3_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv5_3"
+			],
+			"top": [
+				"conv5_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_3_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv5_3"
+			],
+			"top": [
+				"conv5_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_3_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_3"
+			],
+			"top": [
+				"conv5_4"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_4",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 128,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv5_4"
+			],
+			"top": [
+				"conv5_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_4_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv5_4"
+			],
+			"top": [
+				"conv5_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_4_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv5_4"
+			],
+			"top": [
+				"conv5_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_4_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_4"
+			],
+			"top": [
+				"conv5_5"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_5",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv5_5"
+			],
+			"top": [
+				"conv5_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_5_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv5_5"
+			],
+			"top": [
+				"conv5_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_5_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv5_5"
+			],
+			"top": [
+				"conv5_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv5_5_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_5"
+			],
+			"top": [
+				"conv6_1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					2
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					2
+				],
+				"numoutput": 512,
+				"group": 2,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv6_1"
+			],
+			"top": [
+				"conv6_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv6_1"
+			],
+			"top": [
+				"conv6_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv6_1"
+			],
+			"top": [
+				"conv6_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv6_1"
+			],
+			"top": [
+				"conv6_2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv6_2"
+			],
+			"top": [
+				"conv6_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv6_2"
+			],
+			"top": [
+				"conv6_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv6_2"
+			],
+			"top": [
+				"conv6_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv6_2"
+			],
+			"top": [
+				"conv6_3"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_3",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 512,
+				"group": 2,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv6_3"
+			],
+			"top": [
+				"conv6_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_3_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv6_3"
+			],
+			"top": [
+				"conv6_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_3_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv6_3"
+			],
+			"top": [
+				"conv6_3"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_3_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv6_3"
+			],
+			"top": [
+				"conv6_4"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_4",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv6_4"
+			],
+			"top": [
+				"conv6_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_4_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv6_4"
+			],
+			"top": [
+				"conv6_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_4_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv6_4"
+			],
+			"top": [
+				"conv6_4"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_4_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv6_4"
+			],
+			"top": [
+				"conv6_5"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_5",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 512,
+				"group": 2,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv6_5"
+			],
+			"top": [
+				"conv6_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_5_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv6_5"
+			],
+			"top": [
+				"conv6_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_5_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv6_5"
+			],
+			"top": [
+				"conv6_5"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv6_5_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv6_5"
+			],
+			"top": [
+				"conv7_1"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_1",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 512,
+				"group": 4,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv7_1"
+			],
+			"top": [
+				"conv7_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_1_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv7_1"
+			],
+			"top": [
+				"conv7_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_1_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv7_1"
+			],
+			"top": [
+				"conv7_1"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_1_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv7_1"
+			],
+			"top": [
+				"conv7_2"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_2",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 256,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv7_2"
+			],
+			"top": [
+				"conv7_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_2_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv7_2"
+			],
+			"top": [
+				"conv7_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_2_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv7_2"
+			],
+			"top": [
+				"conv7_2"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv7_2_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv5_5",
+				"conv7_2"
+			],
+			"top": [
+				"concat8"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "concat8",
+			"type": "Concat",
+			"concatparam": {
+				"axis": 1
+			}
+		},
+		{
+			"bottom": [
+				"concat8"
+			],
+			"top": [
+				"conv9"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv9",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 512,
+				"group": 4,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"conv9"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv9_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"conv9"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv9_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"conv9"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv9_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"concat8"
+			],
+			"top": [
+				"conv10"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv10",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [
+					1
+				],
+				"kernelsize": [
+					3
+				],
+				"stride": [
+					1
+				],
+				"dilation": [
+					1
+				],
+				"numoutput": 512,
+				"group": 4,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				},
+				"engine": 1
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"conv10"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv10_bn",
+			"type": "BatchNorm",
+			"batchnormparam": {
+				"eps": 0.000001
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"conv10"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv10_scale",
+			"type": "Scale",
+			"scaleparam": {
+				"filler": {
+					"type": "constant",
+					"value": 1
+				},
+				"biasterm": true
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"conv10"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv10_relu",
+			"type": "ReLU",
+			"reluparam": {}
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"conv_final"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv_final_8cls",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 208,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"brvis_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "brvis_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"brvis_ori"
+			],
+			"top": [
+				"brvis_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "brvis_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"ltvis_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ltvis_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"ltvis_ori"
+			],
+			"top": [
+				"ltvis_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ltvis_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"rtvis_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "rtvis_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"rtvis_ori"
+			],
+			"top": [
+				"rtvis_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "rtvis_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"brswt_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "brswt_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"brswt_ori"
+			],
+			"top": [
+				"brswt_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "brswt_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"ltswt_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ltswt_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"ltswt_ori"
+			],
+			"top": [
+				"ltswt_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ltswt_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"rtswt_ori"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "rtswt_ori",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 16,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "gaussian",
+					"std": 0.01
+				}
+			}
+		},
+		{
+			"bottom": [
+				"rtswt_ori"
+			],
+			"top": [
+				"rtswt_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "rtswt_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv_final"
+			],
+			"top": [
+				"conv_final_permute"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv_final_permute",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv_final_permute"
+			],
+			"top": [
+				"loc_pred",
+				"obj_perm",
+				"cls_perm"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "slice",
+			"type": "Slice",
+			"sliceparam": {
+				"slicepoint": [
+					64,
+					80
+				],
+				"axis": 3
+			}
+		},
+		{
+			"bottom": [
+				"cls_perm"
+			],
+			"top": [
+				"cls_reshape"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cls_reshape",
+			"type": "Reshape",
+			"reshapeparam": {
+				"shape": {
+					"dim": [
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": -1,
+							"high": -1,
+							"unsigned": false
+						},
+						{
+							"low": 8,
+							"high": 0,
+							"unsigned": false
+						}
+					]
+				}
+			}
+		},
+		{
+			"bottom": [
+				"cls_reshape"
+			],
+			"top": [
+				"cls_pred_prob"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cls_pred_prob",
+			"type": "Softmax",
+			"softmaxparam": {
+				"axis": 3
+			}
+		},
+		{
+			"bottom": [
+				"cls_pred_prob"
+			],
+			"top": [
+				"cls_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cls_pred",
+			"type": "Reshape",
+			"reshapeparam": {
+				"shape": {
+					"dim": [
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": -1,
+							"high": -1,
+							"unsigned": false
+						},
+						{
+							"low": 128,
+							"high": 0,
+							"unsigned": false
+						}
+					]
+				}
+			}
+		},
+		{
+			"bottom": [
+				"obj_perm"
+			],
+			"top": [
+				"obj_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "obj_pred",
+			"type": "Sigmoid"
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"ori_origin"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ori_origin",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 32,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "xavier"
+				}
+			}
+		},
+		{
+			"bottom": [
+				"ori_origin"
+			],
+			"top": [
+				"ori_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "ori_pred",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv9"
+			],
+			"top": [
+				"dim_origin"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "dim_origin",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 48,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "xavier"
+				}
+			}
+		},
+		{
+			"bottom": [
+				"dim_origin"
+			],
+			"top": [
+				"dim_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "dim_pred",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"vis_pack"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "vis_pack",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 64,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "xavier"
+				}
+			}
+		},
+		{
+			"bottom": [
+				"vis_pack"
+			],
+			"top": [
+				"vis_perm"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "vis_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"vis_perm"
+			],
+			"top": [
+				"vis_perm_reshape"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "vis_perm_reshape",
+			"type": "Reshape",
+			"reshapeparam": {
+				"shape": {
+					"dim": [
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": -1,
+							"high": -1,
+							"unsigned": false
+						},
+						{
+							"low": 4,
+							"high": 0,
+							"unsigned": false
+						}
+					]
+				}
+			}
+		},
+		{
+			"bottom": [
+				"vis_perm_reshape"
+			],
+			"top": [
+				"vis_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "vis_pred",
+			"type": "Sigmoid"
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"conv_area_id"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "conv_area_id_half",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 64,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "xavier"
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv_area_id"
+			],
+			"top": [
+				"area_id_perm"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "area_id_perm",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		},
+		{
+			"bottom": [
+				"area_id_perm"
+			],
+			"top": [
+				"area_id_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "area_id_perm_reshape",
+			"type": "Reshape",
+			"reshapeparam": {
+				"shape": {
+					"dim": [
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": 0,
+							"high": 0,
+							"unsigned": false
+						},
+						{
+							"low": -1,
+							"high": -1,
+							"unsigned": false
+						},
+						{
+							"low": 4,
+							"high": 0,
+							"unsigned": false
+						}
+					]
+				}
+			}
+		},
+		{
+			"bottom": [
+				"conv10"
+			],
+			"top": [
+				"cut_4d_origin"
+			],
+			"lossweight": [],
+			"param": [
+				{
+					"lrmult": 1,
+					"decaymult": 1
+				}
+			],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cut_4d_origin",
+			"type": "Convolution",
+			"convolutionparam": {
+				"pad": [],
+				"kernelsize": [
+					1
+				],
+				"stride": [
+					1
+				],
+				"dilation": [],
+				"numoutput": 64,
+				"biasterm": true,
+				"weightfiller": {
+					"type": "xavier"
+				}
+			}
+		},
+		{
+			"bottom": [
+				"cut_4d_origin"
+			],
+			"top": [
+				"cut_sig"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cut_sig",
+			"type": "Sigmoid"
+		},
+		{
+			"bottom": [
+				"cut_sig"
+			],
+			"top": [
+				"cut_pred"
+			],
+			"lossweight": [],
+			"param": [],
+			"blobs": [],
+			"propagatedown": [],
+			"include": [],
+			"exclude": [],
+			"yolodataparam": [],
+			"dataprobparam": [],
+			"name": "cut_pred",
+			"type": "Permute",
+			"permuteparam": {
+				"order": [
+					0,
+					2,
+					3,
+					1
+				]
+			}
+		}
+	],
+	"layers": [],
+	"name": "darknet/16c-16x-r1/3d"
+}

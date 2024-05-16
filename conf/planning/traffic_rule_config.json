@@ -1,0 +1,81 @@
+{
+	"config": [
+		{
+			"ruleid": 1,
+			"enabled": false,
+			"backsidevehicle": {
+				"backsidelanewidth": 4
+			}
+		},
+		{
+			"ruleid": 2,
+			"enabled": true,
+			"crosswalk": {
+				"stopdistance": 1,
+				"maxstopdeceleration": 6,
+				"minpasssdistance": 1,
+				"maxvalidstopdistance": 3.5,
+				"expandsdistance": 2,
+				"stopstrictldistance": 6,
+				"stoplooseldistance": 8,
+				"stoptimeout": 4
+			}
+		},
+		{
+			"ruleid": 3,
+			"enabled": true,
+			"destination": {
+				"stopdistance": 0.5
+			}
+		},
+		{
+			"ruleid": 4,
+			"enabled": true,
+			"keepclear": {
+				"enablekeepclearzone": true,
+				"enablejunction": true,
+				"minpasssdistance": 2,
+				"alignwithtrafficsigntolerance": 4.5
+			}
+		},
+		{
+			"ruleid": 5,
+			"enabled": true,
+			"referencelineend": {
+				"stopdistance": 0.5,
+				"minreferencelineremainlength": 50
+			}
+		},
+		{
+			"ruleid": 6,
+			"enabled": true,
+			"rerouting": {
+				"preparereroutingtime": 2,
+				"cooldowntime": 3
+			}
+		},
+		{
+			"ruleid": 7,
+			"enabled": true,
+			"stopsign": {
+				"stopdistance": 1
+			}
+		},
+		{
+			"ruleid": 8,
+			"enabled": true,
+			"trafficlight": {
+				"stopdistance": 1,
+				"maxstopdeceleration": 4
+			}
+		},
+		{
+			"ruleid": 9,
+			"enabled": true,
+			"yieldsign": {
+				"stopdistance": 1,
+				"startwatchdistance": 2
+			}
+		}
+	]
+}

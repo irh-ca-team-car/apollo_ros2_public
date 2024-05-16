@@ -1,0 +1,30 @@
+{
+	"imgcapability": 14,
+	"lostage": 4,
+	"reserveage": 6,
+	"weightappearance": 0.7,
+	"weightmotion": 0.2,
+	"weighttracklet": 0.1,
+	"weightoverlap": 0.1,
+	"border": 20,
+	"targetthresh": 0.65,
+	"correcttype": false,
+	"targetparam": {
+		"velocitythreshold": 2,
+		"velocityoutputdelay": 2,
+		"worldcenter": {
+			"initvariance": 5,
+			"measurevariance": 1,
+			"processvariance": 1
+		},
+		"imagecenter": {
+			"initvariance": 2500,
+			"measurevariance": 400,
+			"processvariance": 200
+		},
+		"imagewhupdaterate": 0.6,
+		"worldlhwhistory": 10
+	},
+	"targetcombineiouthreshold": 0.4,
+	"fusiontargetthresh": 0.45
+}

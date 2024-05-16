@@ -1,0 +1,1 @@
+{"sensormeta": [{"name": "velodyne64","type": VELODYNE_64,"orientation": FRONT},{"name": "front_12mm","type": 7,"orientation": FRONT},{"name": "front_6mm","type": 7,"orientation": FRONT},{"name": "onsemi_obstacle","type": 7,"orientation": FRONT},{"name": "onsemi_wide","type": 7,"orientation": FRONT},{"name": "onsemi_traffic","type": 7,"orientation": FRONT}]}

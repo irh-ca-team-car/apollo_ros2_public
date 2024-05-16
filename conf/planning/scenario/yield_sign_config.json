@@ -1,0 +1,145 @@
+{
+	"scenariotype": 8,
+	"yieldsignconfig": {
+		"startyieldsignscenariodistance": 10,
+		"maxvalidstopdistance": 4.5,
+		"minpasssdistance": 3,
+		"creeptimeoutsec": 10
+	},
+	"stagetype": [
+		9,
+		9
+	],
+	"stageconfig": [
+		{
+			"stagetype": 9,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		},
+		{
+			"stagetype": 9,
+			"enabled": true,
+			"tasktype": [
+				1,
+				1,
+				1,
+				2,
+				9,
+				1,
+				1,
+				2,
+				1,
+				2,
+				1,
+				1,
+				2
+			],
+			"taskconfig": [
+				{
+					"tasktype": 1,
+					"creepdeciderconfig": {
+						"stopdistance": 0.3,
+						"speedlimit": 1,
+						"maxvalidstopdistance": 0.4,
+						"minboundaryt": 6,
+						"ignoremaxstmint": 0.1,
+						"ignoreminstmins": 15
+					}
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 9
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 1
+				},
+				{
+					"tasktype": 2
+				},
+				{
+					"tasktype": 2
+				}
+			]
+		}
+	]
+}

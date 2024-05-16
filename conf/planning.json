@@ -1,0 +1,392 @@
+{
+	"topicconfig": {
+		"chassistopic": "/apollo/canbus/chassis",
+		"hmistatustopic": "/apollo/hmi/status",
+		"localizationtopic": "/apollo/localization/pose",
+		"planningpadtopic": "/apollo/planning/pad",
+		"planningtrajectorytopic": "/apollo/planning",
+		"predictiontopic": "/apollo/prediction",
+		"relativemaptopic": "/apollo/relative_map",
+		"routingrequesttopic": "/apollo/routing_request",
+		"routingresponsetopic": "/apollo/routing_response",
+		"storytellingtopic": "/apollo/storytelling",
+		"trafficlightdetectiontopic": "/apollo/perception/traffic_light",
+		"planninglearningdatatopic": "/apollo/planning/learning_data"
+	},
+	"learningmode": 0,
+	"standardplanningconfig": {
+		"plannertype": 1,
+		"plannerpublicroadconfig": {}
+	},
+	"defaulttaskconfig": [
+		{
+			"tasktype": 24,
+			"piecewisejerkpathoptimizerconfig": {
+				"defaultpathconfig": {
+					"lweight": 1,
+					"dlweight": 20,
+					"ddlweight": 1000,
+					"dddlweight": 50000
+				},
+				"lanechangepathconfig": {
+					"lweight": 1,
+					"dlweight": 5,
+					"ddlweight": 800,
+					"dddlweight": 30000
+				}
+			}
+		},
+		{
+			"tasktype": 25,
+			"piecewisejerkspeedoptimizerconfig": {
+				"accweight": 1,
+				"jerkweight": 3,
+				"kappapenaltyweight": 2000,
+				"refsweight": 10,
+				"refvweight": 10
+			}
+		},
+		{
+			"tasktype": 23,
+			"piecewisejerknonlinearspeedoptimizerconfig": {
+				"accweight": 2,
+				"jerkweight": 3,
+				"lataccweight": 1000,
+				"spotentialweight": 0.05,
+				"refvweight": 5,
+				"refsweight": 100,
+				"softsboundweight": 1000000,
+				"usewarmstart": true
+			}
+		},
+		{
+			"tasktype": 26,
+			"speedheuristicoptimizerconfig": {
+				"defaultspeedconfig": {
+					"unitt": 1,
+					"densedimensions": 101,
+					"denseunits": 0.1,
+					"sparseunits": 1,
+					"speedweight": 0,
+					"accelweight": 10,
+					"jerkweight": 10,
+					"obstacleweight": 1,
+					"referenceweight": 0,
+					"godownbuffer": 5,
+					"goupbuffer": 5,
+					"defaultobstaclecost": 10000,
+					"defaultspeedcost": 1000,
+					"exceedspeedpenalty": 1000,
+					"lowspeedpenalty": 10,
+					"referencespeedpenalty": 10,
+					"keepclearlowspeedpenalty": 10,
+					"accelpenalty": 1,
+					"decelpenalty": 1,
+					"positivejerkcoeff": 1,
+					"negativejerkcoeff": 1,
+					"maxacceleration": 2,
+					"maxdeceleration": -4,
+					"spatialpotentialpenalty": 100
+				},
+				"lanechangespeedconfig": {
+					"unitt": 1,
+					"densedimensions": 21,
+					"denseunits": 0.25,
+					"sparseunits": 1,
+					"speedweight": 0,
+					"accelweight": 10,
+					"jerkweight": 10,
+					"obstacleweight": 1,
+					"referenceweight": 0,
+					"godownbuffer": 5,
+					"goupbuffer": 5,
+					"defaultobstaclecost": 10000,
+					"defaultspeedcost": 1000,
+					"exceedspeedpenalty": 1000,
+					"lowspeedpenalty": 10,
+					"referencespeedpenalty": 10,
+					"keepclearlowspeedpenalty": 10,
+					"accelpenalty": 1,
+					"decelpenalty": 1,
+					"positivejerkcoeff": 1,
+					"negativejerkcoeff": 1,
+					"maxacceleration": 2,
+					"maxdeceleration": -2.5,
+					"spatialpotentialpenalty": 100000,
+					"islanechanging": true
+				}
+			}
+		},
+		{
+			"tasktype": 19
+		},
+		{
+			"tasktype": 16,
+			"rulebasedstopdeciderconfig": {
+				"maxadcstopspeed": 0.5,
+				"maxvalidstopdistance": 1,
+				"searchbeamlength": 20,
+				"searchbeamradiusintensity": 0.08,
+				"searchrange": 3.14,
+				"isblockanglethreshold": 0.5
+			}
+		},
+		{
+			"tasktype": 20,
+			"stboundsdeciderconfig": {
+				"totaltime": 7
+			}
+		},
+		{
+			"tasktype": 17,
+			"speedboundsdeciderconfig": {
+				"totaltime": 7,
+				"boundarybuffer": 0.25,
+				"maxcentricaccelerationlimit": 2,
+				"pointextension": 0,
+				"lowestspeed": 2.5,
+				"staticobsnudgespeedratio": 0.6,
+				"dynamicobsnudgespeedratio": 0.8
+			}
+		},
+		{
+			"tasktype": 18,
+			"speedboundsdeciderconfig": {
+				"totaltime": 7,
+				"boundarybuffer": 0.1,
+				"maxcentricaccelerationlimit": 2,
+				"pointextension": 0,
+				"lowestspeed": 2.5,
+				"staticobsnudgespeedratio": 0.6,
+				"dynamicobsnudgespeedratio": 0.8
+			}
+		},
+		{
+			"tasktype": 7,
+			"openspaceprestopdeciderconfig": {}
+		},
+		{
+			"tasktype": 22,
+			"openspacetrajectoryproviderconfig": {
+				"openspacetrajectoryoptimizerconfig": {
+					"planneropenspaceconfig": {
+						"warmstartconfig": {
+							"xygridresolution": 0.3,
+							"phigridresolution": 0.1,
+							"nextnodenum": 10,
+							"stepsize": 0.25,
+							"trajforwardpenalty": 1,
+							"trajbackpenalty": 1,
+							"trajgearswitchpenalty": 10,
+							"trajsteerpenalty": 0,
+							"trajsteerchangepenalty": 0,
+							"gridastarxyresolution": 0.25,
+							"noderadius": 0.5
+						},
+						"dualvariablewarmstartconfig": {
+							"weightd": 1,
+							"ipoptconfig": {
+								"ipoptprintlevel": 0,
+								"mumpsmempercent": 6000,
+								"mumpspivtol": 0.000001,
+								"ipoptmaxiter": 100,
+								"ipopttol": 0.00001,
+								"ipoptacceptableconstrvioltol": 0.1,
+								"ipoptminhessianperturbation": 1e-12,
+								"ipoptjacobianregularizationvalue": 1e-7,
+								"ipoptprinttimingstatistics": "yes",
+								"ipoptalphafory": "min",
+								"ipoptrecalcy": "yes"
+							},
+							"qpformat": 2,
+							"minsafetydistance": 0.01,
+							"osqpconfig": {
+								"alpha": 1,
+								"epsabs": 0.001,
+								"epsrel": 0.001,
+								"maxiter": 10000,
+								"polish": true,
+								"osqpdebuglog": false
+							}
+						},
+						"distanceapproachconfig": {
+							"weightsteer": 0.3,
+							"weighta": 1.1,
+							"weightsteerrate": 3,
+							"weightarate": 2.5,
+							"weightx": 2.3,
+							"weighty": 0.7,
+							"weightphi": 1.5,
+							"weightv": 0,
+							"weightsteerstitching": 1.75,
+							"weightastitching": 3.25,
+							"weightfirstordertime": 4.25,
+							"weightsecondordertime": 13.5,
+							"weightendstate": 1,
+							"weightslack": 1,
+							"minsafetydistance": 0.01,
+							"maxspeedforward": 2,
+							"maxspeedreverse": 1,
+							"maxaccelerationforward": 2,
+							"maxaccelerationreverse": 1,
+							"mintimesamplescaling": 0.8,
+							"maxtimesamplescaling": 1.2,
+							"usefixtime": false,
+							"ipoptconfig": {
+								"ipoptprintlevel": 0,
+								"mumpsmempercent": 6000,
+								"mumpspivtol": 0.000001,
+								"ipoptmaxiter": 1000,
+								"ipopttol": 0.0001,
+								"ipoptacceptableconstrvioltol": 0.1,
+								"ipoptminhessianperturbation": 1e-12,
+								"ipoptjacobianregularizationvalue": 1e-7,
+								"ipoptprinttimingstatistics": "yes",
+								"ipoptalphafory": "min",
+								"ipoptrecalcy": "yes",
+								"ipoptmuinit": 0.1
+							},
+							"enableconstraintcheck": false,
+							"enableinitialfinalcheck": false,
+							"enablejacobianad": false,
+							"enablehandderivative": false,
+							"enablederivativecheck": false,
+							"distanceapproachmode": 5,
+							"enablecheckinitialstate": false
+						},
+						"iterativeanchoringsmootherconfig": {
+							"interpolateddeltas": 0.1,
+							"reanchoringtrailsnum": 50,
+							"reanchoringposstddev": 0.25,
+							"reanchoringlengthstddev": 1,
+							"estimatebound": false,
+							"defaultbound": 2,
+							"vehicleshortestdimension": 1.04,
+							"femposdeviationsmootherconfig": {
+								"weightfemposdeviation": 10000000,
+								"weightpathlength": 0,
+								"weightrefdeviation": 1000,
+								"applycurvatureconstraint": true,
+								"weightcurvatureconstraintslackvar": 100000000,
+								"curvatureconstraint": 0.18,
+								"maxiter": 500,
+								"timelimit": 0,
+								"verbose": false,
+								"scaledtermination": true,
+								"warmstart": true
+							},
+							"scurveconfig": {
+								"accweight": 1,
+								"jerkweight": 1,
+								"kappapenaltyweight": 100,
+								"refsweight": 10,
+								"refvweight": 0
+							},
+							"collisiondecreaseratio": 0,
+							"maxforwardv": 1,
+							"maxreversev": 1,
+							"maxforwardacc": 0.5,
+							"maxreverseacc": 1,
+							"maxaccjerk": 0.5,
+							"deltat": 0.2
+						},
+						"deltat": 0.5,
+						"isneardestinationthreshold": 0.1,
+						"enablecheckparalleltrajectory": false,
+						"enablelinearinterpolation": false,
+						"isneardestinationthetathreshold": 0.05
+					}
+				}
+			}
+		},
+		{
+			"tasktype": 21,
+			"openspacetrajectorypartitionconfig": {
+				"gearshiftmaxt": 3,
+				"gearshiftunitt": 0.02,
+				"gearshiftperiodduration": 2,
+				"interpolatedpiecesnum": 10,
+				"initialgearcheckhorizon": 15,
+				"headingsearchrange": 0.79,
+				"headingtrackrange": 1.57,
+				"distancesearchrange": 2,
+				"headingoffsettomidpoint": 0.79,
+				"lateraloffsettomidpoint": 0.5,
+				"longitudinaloffsettomidpoint": 0.2,
+				"vehicleboxiouthresholdtomidpoint": 0.75,
+				"linearvelocitythresholdonego": 0.2
+			}
+		},
+		{
+			"tasktype": 8,
+			"openspaceroideciderconfig": {
+				"roilongitudinalrangestart": 15,
+				"roilongitudinalrangeend": 15,
+				"parkingstartrange": 20,
+				"parkinginwards": false,
+				"enableperceptionobstacles": true,
+				"parkingdepthbuffer": 0.2,
+				"roilinesegmentminangle": 0.15,
+				"roilinesegmentlength": 1,
+				"perceptionobstaclefilteringdistance": 1000,
+				"perceptionobstaclebuffer": 0,
+				"curbheadingtangentchangeupperlimit": 0.4
+			}
+		},
+		{
+			"tasktype": 6,
+			"openspacefallbackdeciderconfig": {
+				"openspacepredictiontimeperiod": 5,
+				"openspacefallbackcollisiondistance": 5,
+				"openspacefallbackstopdistance": 2,
+				"openspacefallbackcollisiontimebuffer": 5
+			}
+		},
+		{
+			"tasktype": 10,
+			"pathboundsdeciderconfig": {
+				"islaneborrowing": false,
+				"ispullover": false,
+				"pulloverdestinationtoadcbuffer": 25,
+				"pulloverdestinationtopathendbuffer": 4,
+				"pulloverroadedgebuffer": 0.15,
+				"pulloverapproachlondistanceadjustfactor": 1.5
+			}
+		},
+		{
+			"tasktype": 12,
+			"pathlaneborrowdeciderconfig": {
+				"allowlaneborrowing": false
+			}
+		},
+		{
+			"tasktype": 2,
+			"lanechangedeciderconfig": {
+				"enablelanechangeurgencycheck": false,
+				"enableprioritizechangelane": false,
+				"enableremovechangelane": false,
+				"recklesschangelane": false,
+				"changelanesuccessfreezetime": 1.5,
+				"changelanefailfreezetime": 1
+			}
+		},
+		{
+			"tasktype": 14,
+			"pathreusedeciderconfig": {
+				"reusepath": false
+			}
+		},
+		{
+			"tasktype": 11,
+			"pathdeciderconfig": {
+				"staticobstaclebuffer": 0.3
+			}
+		},
+		{
+			"tasktype": 13,
+			"pathreferencedeciderconfig": {
+				"minpathreferencelength": 20
+			}
+		}
+	]
+}

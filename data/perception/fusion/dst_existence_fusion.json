@@ -1,0 +1,21 @@
+{
+	"trackobjectmaxmatchdistance": 4,
+	"cameravaliddist": [
+		{
+			"cameraname": "camera_front_obstacle",
+			"validdist": 110
+		},
+		{
+			"cameraname": "camera_front_narrow",
+			"validdist": 150
+		},
+		{
+			"cameraname": "front_6mm",
+			"validdist": 110
+		},
+		{
+			"cameraname": "front_12mm",
+			"validdist": 150
+		}
+	]
+}

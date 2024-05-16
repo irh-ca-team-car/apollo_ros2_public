@@ -1,0 +1,9 @@
+[submodule "abseil-cpp"]
+	path = abseil-cpp
+	url = https://github.com/abseil/abseil-cpp
+[submodule "json"]
+	path = json
+	url = git@github.com:nlohmann/json.git
+[submodule "osqp"]
+	path = osqp
+	url = https://github.com/oxfordcontrol/osqp

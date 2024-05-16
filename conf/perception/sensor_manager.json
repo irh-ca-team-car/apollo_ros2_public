@@ -1,0 +1,39 @@
+{
+	"sensormeta": [
+		{
+			"name": "velodyne128",
+			"type": 10,
+			"orientation": 8
+		},
+		{
+			"name": "velodyne64",
+			"type": 0,
+			"orientation": 8
+		},
+		{
+			"name": "velodyne16",
+			"type": 2,
+			"orientation": 0
+		},
+		{
+			"name": "radar_front",
+			"type": 6,
+			"orientation": 0
+		},
+		{
+			"name": "radar_rear",
+			"type": 6,
+			"orientation": 4
+		},
+		{
+			"name": "front_6mm",
+			"type": 7,
+			"orientation": 0
+		},
+		{
+			"name": "front_12mm",
+			"type": 7,
+			"orientation": 0
+		}
+	]
+}

@@ -1,0 +1,76 @@
+{
+	"topicconfig": {
+		"chassistopic": "/apollo/canbus/chassis",
+		"hmistatustopic": "/apollo/hmi/status",
+		"localizationtopic": "/apollo/localization/pose",
+		"planningpadtopic": "/apollo/planning/pad",
+		"planningtrajectorytopic": "/apollo/planning",
+		"predictiontopic": "/apollo/prediction",
+		"relativemaptopic": "/apollo/relative_map",
+		"routingrequesttopic": "/apollo/routing_request",
+		"routingresponsetopic": "/apollo/routing_response",
+		"trafficlightdetectiontopic": "/apollo/perception/traffic_light",
+		"storytellingtopic":"/apollo/storytelling",
+		"planninglearningdatatopic":"/apollo/planning/learning_data"
+	},
+	"navigationplanningconfig": {
+		"plannertype": 2,
+		"plannernaviconfig": {
+			"task": [
+				4,
+				5
+			],
+			"navipathdeciderconfig": {
+				"minpathlength": 5,
+				"minlookforwardtime": 2,
+				"maxkeeplanedistance": 0.4,
+				"maxkeeplaneshifty": 0.15,
+				"minkeeplaneoffset": 0.2,
+				"keeplaneshiftcompensation": 0.01,
+				"movedestlaneconfigtalbe": {
+					"lateralshift": {
+						"maxspeed": 34,
+						"maxmovedestlaneshifty": 0.45
+					}
+				},
+				"movedestlanecompensation": 0.35,
+				"maxkappathreshold": 0,
+				"kappamovedestlanecompensation": 0,
+				"startplanpointfrom": 0
+			},
+			"navispeeddeciderconfig": {
+				"preferredaccel": 1.5,
+				"preferreddecel": 1.5,
+				"preferredjerk": 2,
+				"maxaccel": 4,
+				"maxdecel": 5,
+				"obstaclebuffer": 1,
+				"safedistancebase": 10,
+				"safedistanceratio": 1,
+				"followingaccelratio": 0.5,
+				"softcentricaccellimit": 1,
+				"hardcentricaccellimit": 1.5,
+				"hardspeedlimit": 40,
+				"hardaccellimit": 8,
+				"enablesafepath": false,
+				"enableplanningstartpoint": true,
+				"enableaccelautocompensation": false,
+				"kappapreview": 80,
+				"kappathreshold": 0.02
+			},
+			"naviobstacledeciderconfig": {
+				"minnudgedistance": 0.2,
+				"maxnudgedistance": 1.1,
+				"maxallownudgespeed": 16.667,
+				"safedistance": 0.2,
+				"nudgeallowtolerance": 0.05,
+				"cyclesnumber": 3,
+				"judgediscoeff": 2,
+				"basisdisvalue": 30,
+				"lateralvelocityvalue": 0.5,
+				"speeddeciderdetectrange": 0.35,
+				"maxkeepnudgecycles": 110
+			}
+		}
+	}
+}

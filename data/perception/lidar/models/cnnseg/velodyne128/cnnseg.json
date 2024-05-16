@@ -1,0 +1,4 @@
+{"paramfile": "lidar/models/cnnseg/velodyne128/cnnseg_param.json",
+"protofile": "lidar/models/cnnseg/velodyne128/deploy.json",
+"weightfile": "lidar/models/cnnseg/velodyne128/deploy.caffemodel.bin",
+"enginefile": "lidar/models/cnnseg/velodyne128/engine.json"}

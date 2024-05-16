@@ -1,0 +1,772 @@
+{
+    "name": "pcd_parsing",
+    "layer": [
+        {
+            "name": "input",
+            "type": "Input",
+            "top": "data",
+            "inputparam": {
+                "shape": {
+                    "dim": [
+                        1,
+                        4,
+                        864,
+                        864
+                    ]
+                }
+            }
+        },
+        {
+            "name": "slice_[dump, mask]",
+            "type": "Slice",
+            "bottom": "data",
+            "top": [
+                "dump_blob",
+                "mask"
+            ],
+            "sliceparam": {
+                "slicepoint": 3,
+                "axis": 1
+            }
+        },
+        {
+            "name": "Silence_[dump_blob]",
+            "type": "Silence",
+            "bottom": "dump_blob"
+        },
+        {
+            "name": "conv0_1",
+            "type": "Convolution",
+            "bottom": "data",
+            "top": "conv0_1",
+            "convolutionparam": {
+                "numoutput": 24,
+                "biasterm": true,
+                "pad": 0,
+                "kernelsize": 1,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv0_1",
+            "type": "ReLU",
+            "bottom": "conv0_1",
+            "top": "conv0_1"
+        },
+        {
+            "name": "conv0",
+            "type": "Convolution",
+            "bottom": "conv0_1",
+            "top": "conv0",
+            "convolutionparam": {
+                "numoutput": 24,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv0",
+            "type": "ReLU",
+            "bottom": "conv0",
+            "top": "conv0"
+        },
+        {
+            "name": "conv1_1",
+            "type": "Convolution",
+            "bottom": "conv0",
+            "top": "conv1_1",
+            "convolutionparam": {
+                "numoutput": 48,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv1_1",
+            "type": "ReLU",
+            "bottom": "conv1_1",
+            "top": "conv1_1"
+        },
+        {
+            "name": "conv1",
+            "type": "Convolution",
+            "bottom": "conv1_1",
+            "top": "conv1",
+            "convolutionparam": {
+                "numoutput": 48,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv1",
+            "type": "ReLU",
+            "bottom": "conv1",
+            "top": "conv1"
+        },
+        {
+            "name": "conv2_1",
+            "type": "Convolution",
+            "bottom": "conv1",
+            "top": "conv2_1",
+            "convolutionparam": {
+                "numoutput": 64,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv2_1",
+            "type": "ReLU",
+            "bottom": "conv2_1",
+            "top": "conv2_1"
+        },
+        {
+            "name": "conv2_2",
+            "type": "Convolution",
+            "bottom": "conv2_1",
+            "top": "conv2_2",
+            "convolutionparam": {
+                "numoutput": 64,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv2_2",
+            "type": "ReLU",
+            "bottom": "conv2_2",
+            "top": "conv2_2"
+        },
+        {
+            "name": "conv2",
+            "type": "Convolution",
+            "bottom": "conv2_2",
+            "top": "conv2",
+            "convolutionparam": {
+                "numoutput": 64,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv2",
+            "type": "ReLU",
+            "bottom": "conv2",
+            "top": "conv2"
+        },
+        {
+            "name": "conv3_1",
+            "type": "Convolution",
+            "bottom": "conv2",
+            "top": "conv3_1",
+            "convolutionparam": {
+                "numoutput": 96,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv3_1",
+            "type": "ReLU",
+            "bottom": "conv3_1",
+            "top": "conv3_1"
+        },
+        {
+            "name": "conv3_2",
+            "type": "Convolution",
+            "bottom": "conv3_1",
+            "top": "conv3_2",
+            "convolutionparam": {
+                "numoutput": 96,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv3_2",
+            "type": "ReLU",
+            "bottom": "conv3_2",
+            "top": "conv3_2"
+        },
+        {
+            "name": "conv3",
+            "type": "Convolution",
+            "bottom": "conv3_2",
+            "top": "conv3",
+            "convolutionparam": {
+                "numoutput": 96,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv3",
+            "type": "ReLU",
+            "bottom": "conv3",
+            "top": "conv3"
+        },
+        {
+            "name": "conv4_1",
+            "type": "Convolution",
+            "bottom": "conv3",
+            "top": "conv4_1",
+            "convolutionparam": {
+                "numoutput": 128,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv4_1",
+            "type": "ReLU",
+            "bottom": "conv4_1",
+            "top": "conv4_1"
+        },
+        {
+            "name": "conv4_2",
+            "type": "Convolution",
+            "bottom": "conv4_1",
+            "top": "conv4_2",
+            "convolutionparam": {
+                "numoutput": 128,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv4_2",
+            "type": "ReLU",
+            "bottom": "conv4_2",
+            "top": "conv4_2"
+        },
+        {
+            "name": "conv4",
+            "type": "Convolution",
+            "bottom": "conv4_2",
+            "top": "conv4",
+            "convolutionparam": {
+                "numoutput": 128,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv4",
+            "type": "ReLU",
+            "bottom": "conv4",
+            "top": "conv4"
+        },
+        {
+            "name": "conv5_1",
+            "type": "Convolution",
+            "bottom": "conv4",
+            "top": "conv5_1",
+            "convolutionparam": {
+                "numoutput": 192,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv5_1",
+            "type": "ReLU",
+            "bottom": "conv5_1",
+            "top": "conv5_1"
+        },
+        {
+            "name": "conv5",
+            "type": "Convolution",
+            "bottom": "conv5_1",
+            "top": "conv5",
+            "convolutionparam": {
+                "numoutput": 192,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_conv5",
+            "type": "ReLU",
+            "bottom": "conv5",
+            "top": "conv5"
+        },
+        {
+            "name": "deconv5_1",
+            "type": "Convolution",
+            "bottom": "conv5",
+            "top": "deconv5_1",
+            "convolutionparam": {
+                "numoutput": 192,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv5_1",
+            "type": "ReLU",
+            "bottom": "deconv5_1",
+            "top": "deconv5_1"
+        },
+        {
+            "name": "deconv4",
+            "type": "Deconvolution",
+            "bottom": "deconv5_1",
+            "top": "deconv4",
+            "convolutionparam": {
+                "numoutput": 128,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 4,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv4",
+            "type": "ReLU",
+            "bottom": "deconv4",
+            "top": "deconv4"
+        },
+        {
+            "name": "Concat_concat4",
+            "type": "Concat",
+            "bottom": [
+                "conv4",
+                "deconv4"
+            ],
+            "top": "concat4"
+        },
+        {
+            "name": "deconv4_1",
+            "type": "Convolution",
+            "bottom": "concat4",
+            "top": "deconv4_1",
+            "convolutionparam": {
+                "numoutput": 128,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv4_1",
+            "type": "ReLU",
+            "bottom": "deconv4_1",
+            "top": "deconv4_1"
+        },
+        {
+            "name": "deconv3",
+            "type": "Deconvolution",
+            "bottom": "deconv4_1",
+            "top": "deconv3",
+            "convolutionparam": {
+                "numoutput": 96,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 4,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv3",
+            "type": "ReLU",
+            "bottom": "deconv3",
+            "top": "deconv3"
+        },
+        {
+            "name": "Concat_concat3",
+            "type": "Concat",
+            "bottom": [
+                "conv3",
+                "deconv3"
+            ],
+            "top": "concat3"
+        },
+        {
+            "name": "deconv3_1",
+            "type": "Convolution",
+            "bottom": "concat3",
+            "top": "deconv3_1",
+            "convolutionparam": {
+                "numoutput": 96,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv3_1",
+            "type": "ReLU",
+            "bottom": "deconv3_1",
+            "top": "deconv3_1"
+        },
+        {
+            "name": "deconv2",
+            "type": "Deconvolution",
+            "bottom": "deconv3_1",
+            "top": "deconv2",
+            "convolutionparam": {
+                "numoutput": 64,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 4,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv2",
+            "type": "ReLU",
+            "bottom": "deconv2",
+            "top": "deconv2"
+        },
+        {
+            "name": "Concat_concat2",
+            "type": "Concat",
+            "bottom": [
+                "conv2",
+                "deconv2"
+            ],
+            "top": "concat2"
+        },
+        {
+            "name": "deconv2_1",
+            "type": "Convolution",
+            "bottom": "concat2",
+            "top": "deconv2_1",
+            "convolutionparam": {
+                "numoutput": 64,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv2_1",
+            "type": "ReLU",
+            "bottom": "deconv2_1",
+            "top": "deconv2_1"
+        },
+        {
+            "name": "deconv1",
+            "type": "Deconvolution",
+            "bottom": "deconv2_1",
+            "top": "deconv1",
+            "convolutionparam": {
+                "numoutput": 48,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 4,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv1",
+            "type": "ReLU",
+            "bottom": "deconv1",
+            "top": "deconv1"
+        },
+        {
+            "name": "Concat_concat1",
+            "type": "Concat",
+            "bottom": [
+                "conv1",
+                "deconv1"
+            ],
+            "top": "concat1"
+        },
+        {
+            "name": "deconv1_1",
+            "type": "Convolution",
+            "bottom": "concat1",
+            "top": "deconv1_1",
+            "convolutionparam": {
+                "numoutput": 48,
+                "biasterm": true,
+                "pad": 1,
+                "kernelsize": 3,
+                "stride": 1,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "relu_deconv1_1",
+            "type": "ReLU",
+            "bottom": "deconv1_1",
+            "top": "deconv1_1"
+        },
+        {
+            "name": "deconv0",
+            "type": "Deconvolution",
+            "bottom": "deconv1_1",
+            "top": "deconv0",
+            "convolutionparam": {
+                "numoutput": 12,
+                "pad": 1,
+                "kernelsize": 4,
+                "stride": 2,
+                "weightfiller": {
+                    "type": "xavier"
+                },
+                "biasfiller": {
+                    "type": "constant",
+                    "value": 0.0
+                }
+            }
+        },
+        {
+            "name": "Slice_['category_pt', 'instance_pt', 'confidence_pt', 'classify_pt', 'heading_pt', 'height_pt']",
+            "type": "Slice",
+            "bottom": "deconv0",
+            "top": [
+                "category_pt",
+                "instance_pt",
+                "confidence_pt",
+                "classify_pt",
+                "heading_pt",
+                "height_pt"
+            ],
+            "sliceparam": {
+                "slicepoint": [
+                    1,
+                    3,
+                    4,
+                    9,
+                    11
+                ]
+            }
+        },
+        {
+            "name": "all_category_score",
+            "type": "Sigmoid",
+            "bottom": "category_pt",
+            "top": "all_category_score",
+            "propagatedown": false
+        },
+        {
+            "name": "instance_ignore_layer",
+            "type": "Eltwise",
+            "bottom": [
+                "all_category_score",
+                "mask"
+            ],
+            "top": "category_score",
+            "eltwiseparam": {
+                "operation": 0
+            }
+        },
+        {
+            "name": "confidence_score",
+            "type": "Sigmoid",
+            "bottom": "confidence_pt",
+            "top": "confidence_score",
+            "propagatedown": false
+        },
+        {
+            "name": "class_score",
+            "type": "Sigmoid",
+            "bottom": "classify_pt",
+            "top": "class_score",
+            "propagatedown": false
+        }
+    ]
+}

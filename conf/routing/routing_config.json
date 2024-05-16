@@ -1,0 +1,12 @@
+{
+	"basespeed": 4.167,
+	"leftturnpenalty": 50,
+	"rightturnpenalty": 20,
+	"uturnpenalty": 100,
+	"changepenalty": 500,
+	"basechanginglength": 50,
+	"topicconfig": {
+		"routingresponsetopic": "/apollo/routing_response",
+		"routingresponsehistorytopic": "/apollo/routing_response_history"
+	}
+}

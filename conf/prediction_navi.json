@@ -1,0 +1,52 @@
+{
+	"topicconf": {
+		"adccontainertopicname": "/apollo/prediction/adccontainer",
+		"containertopicname": "/apollo/prediction/container",
+		"evaluatortopicname": "/apollo/prediction/evaluator",
+		"localizationtopic": "/apollo/localization/pose",
+		"perceptionobstacletopic": "/apollo/perception/obstacles",
+		"perceptionobstaclestopicname": "/apollo/prediction/perception_obstacles",
+		"planningtrajectorytopic": "/apollo/planning",
+		"predictiontopic": "/apollo/prediction",
+		"storytellingtopic": "/apollo/storytelling"
+	},
+	"obstacleconf": [
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 0,
+			"evaluatortype": 2,
+			"predictortype": 5
+		},
+		{
+			"obstacletype": 5,
+			"obstaclestatus": 1,
+			"predictortype": 4
+		},
+		{
+			"obstacletype": 3,
+			"predictortype": 1
+		},
+		{
+			"obstacletype": 4,
+			"obstaclestatus": 0,
+			"evaluatortype": 2,
+			"predictortype": 5
+		},
+		{
+			"obstacletype": 4,
+			"obstaclestatus": 1,
+			"predictortype": 4
+		},
+		{
+			"obstacletype": 0,
+			"obstaclestatus": 0,
+			"evaluatortype": 2,
+			"predictortype": 5
+		},
+		{
+			"obstacletype": 0,
+			"obstaclestatus": 1,
+			"predictortype": 4
+		}
+	]
+}

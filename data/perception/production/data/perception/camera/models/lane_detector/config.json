@@ -1,0 +1,31 @@
+{
+	"modelparam": {
+		"modelname": "denseline",
+		"modeltype": "RTNetInt8",
+		"weightfile": "deploy.caffemodel",
+		"protofile": "deploy.prototxt",
+		"resizescale": 0.8,
+		"inputoffsety": 440,
+		"inputoffsetx": 0,
+		"cropheight": 640,
+		"cropwidth": 1920,
+		"meanb": 95,
+		"meang": 99,
+		"meanr": 96,
+		"isbgr": true
+	},
+	"netparam": {
+		"inblob": "data",
+		"outblob": "conv_out",
+		"internalblobint8": [
+			"reduce1_add",
+			"reduce2_add",
+			"reduce3_add",
+			"reduce4_add",
+			"res6b_input_64",
+			"res5b_input_32",
+			"res4d_input_16",
+			"res3c_input_8"
+		]
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"publishifhaslidar": true,
+	"publishifhasradar": true,
+	"publishifhascamera": true,
+	"usecamera3d": true,
+	"minradarconfidentdistance": 40,
+	"maxradarconfidentangle": 20,
+	"mincamerapublishdistance": 50,
+	"invisibleperiodthreshold": 0.001,
+	"toicthreshold": 0.8,
+	"usetracktimepubstrategy": true,
+	"pubtracktimethresh": 3,
+	"existencethreshold": 0.7,
+	"radarexistencethreshold": 0.9
+}

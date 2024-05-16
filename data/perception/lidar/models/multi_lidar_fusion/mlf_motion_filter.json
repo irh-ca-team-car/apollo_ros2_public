@@ -1,0 +1,16 @@
+{   "useadaptive": true,
+    "usebreakdown": true,
+    "useconvergenceboostup": true,
+
+    "initvelocityvariance": 5.0,
+    "initaccelerationvariance": 0.6,
+    "measuredvelocityvariance": 0.6,
+    "predictvariancepersqrsec": 50.0,
+
+    "boostuphistorysizeminimum": 3,
+    "boostuphistorysizemaximum": 6,
+    "convergedconfidenceminimum": 0.5,
+    "noisemaximum": 0.1, 
+
+    "trustorientationrange": 40
+}

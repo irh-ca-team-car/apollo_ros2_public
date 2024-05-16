@@ -1,0 +1,15 @@
+PROJ
+build
+*.tar.gz
+portaudio
+ThirdParty-*
+Ipopt
+node_modules
+*.model.bin
+*.model.json
+*.bin
+*.caffemodel.json
+*.caffemodel.bin
+*.prototxt.json
+*.prototxt.bin
+.vscode/settings.json

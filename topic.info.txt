@@ -1,0 +1,105 @@
+
+/apollo/canbus/chassis
+Type: apollo_msgs/msg/ApollocanbusChassis
+Publisher count: 0
+Subscription count: 3
+/apollo/control
+Type: apollo_msgs/msg/ApollocontrolControlCommand
+Publisher count: 0
+Subscription count: 1
+/apollo/guardian
+Type: apollo_msgs/msg/ApolloguardianGuardianCommand
+Publisher count: 1
+Subscription count: 0
+/apollo/localization/msf_status
+Type: apollo_msgs/msg/ApollolocalizationLocalizationStatus
+Publisher count: 1
+Subscription count: 0
+/apollo/localization/pose
+Type: apollo_msgs/msg/ApollolocalizationLocalizationEstimate
+Publisher count: 1
+Subscription count: 3
+/apollo/monitor/system_status
+Type: apollo_msgs/msg/ApollomonitorSystemStatus
+Publisher count: 0
+Subscription count: 1
+/apollo/navigation
+Type: apollo_msgs/msg/ApollorelativeMapNavigationInfo
+Publisher count: 0
+Subscription count: 1
+/apollo/perception/motion_service
+Type: apollo_msgs/msg/ApolloperceptionMotionService
+Publisher count: 1
+Subscription count: 0
+/apollo/perception/obstacles
+Type: apollo_msgs/msg/ApolloperceptionPerceptionObstacles
+Publisher count: 1
+Subscription count: 1
+/apollo/relative_map
+Type: apollo_msgs/msg/ApollorelativeMapMapMsg
+Publisher count: 1
+Subscription count: 0
+/apollo/routing_request
+Type: apollo_msgs/msg/ApolloroutingRoutingRequest
+Publisher count: 1
+Subscription count: 1
+/apollo/routing_response
+Type: apollo_msgs/msg/ApolloroutingRoutingResponse
+Publisher count: 1
+Subscription count: 0
+/apollo/routing_response_history
+Type: apollo_msgs/msg/ApolloroutingRoutingResponse
+Publisher count: 1
+Subscription count: 0
+/apollo/sensor/conti_radar
+Type: apollo_msgs/msg/ApollodriversContiRadar
+Publisher count: 0
+Subscription count: 1
+/apollo/sensor/delphi_esr
+Type: apollo_msgs/msg/ApollodriversDelphiESR
+Publisher count: 0
+Subscription count: 1
+/apollo/sensor/gnss/corrected_imu
+Type: apollo_msgs/msg/ApollolocalizationCorrectedImu
+Publisher count: 0
+Subscription count: 1
+/apollo/sensor/gnss/ins_stat
+Type: apollo_msgs/msg/ApollodriversgnssInsStat
+Publisher count: 0
+Subscription count: 1
+/apollo/sensor/gnss/odometry
+Type: apollo_msgs/msg/ApollolocalizationGps
+Publisher count: 0
+Subscription count: 1
+/apollo/sensor/mobileye
+Type: apollo_msgs/msg/ApollodriversMobileye
+Publisher count: 0
+Subscription count: 1
+/apollo/task_manager
+Type: apollo_msgs/msg/ApollotaskManagerTask
+Publisher count: 0
+Subscription count: 1
+/parameter_events
+Type: rcl_interfaces/msg/ParameterEvent
+Publisher count: 15
+Subscription count: 14
+/perception/inner/PrefusedObject
+Type: std_msgs/msg/String
+Publisher count: 0
+Subscription count: 1
+/perception/inner/visualization/FusedObjects
+Type: std_msgs/msg/String
+Publisher count: 1
+Subscription count: 0
+/perception/vehicle/obstacles
+Type: apollo_msgs/msg/ApolloperceptionPerceptionObstacles
+Publisher count: 1
+Subscription count: 0
+/rosout
+Type: rcl_interfaces/msg/Log
+Publisher count: 15
+Subscription count: 0
+/tf
+Type: apollo_msgs/msg/ApollotransformTransformStampeds
+Publisher count: 1
+Subscription count: 0

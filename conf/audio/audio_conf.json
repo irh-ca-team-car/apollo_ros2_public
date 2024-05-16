@@ -1,0 +1,10 @@
+{
+	"topicconf": {
+		"audiodatatopicname": "/apollo/sensor/microphone",
+		"audiodetectiontopicname": "/apollo/audio_detection",
+		"localizationtopicname": "/apollo/localization/pose",
+		"audio_eventtopicname": "/apollo/audio_event",
+		"perceptiontopicname": "/apollo/perception/obstacles"
+	},
+	"respeakerextrinsicspath": "/apollo/modules/audio/conf/respeaker_extrinsics.yaml"
+}

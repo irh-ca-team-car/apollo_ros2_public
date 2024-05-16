@@ -1,0 +1,22 @@
+{
+	"maxconstraintinterval": 0.25,
+	"longitudinalboundarybound": 2,
+	"maxlateralboundarybound": 0.5,
+	"minlateralboundarybound": 0.1,
+	"curbshift": 0.2,
+	"lateralbuffer": 0.2,
+	"discretepoints": {
+		"smoothingmethod": 2,
+		"femposdeviationsmoothing": {
+			"weightfemposdeviation": 10000000000,
+			"weightrefdeviation": 1,
+			"weightpathlength": 1,
+			"applycurvatureconstraint": false,
+			"maxiter": 500,
+			"timelimit": 0,
+			"verbose": false,
+			"scaledtermination": true,
+			"warmstart": true
+		}
+	}
+}

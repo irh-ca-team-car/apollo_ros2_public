@@ -1,0 +1,30 @@
+{
+	"scenariotype": 1,
+	"learningmodelsampleconfig": {},
+	"stagetype": 1,
+	"stageconfig": {
+		"stagetype": 1,
+		"enabled": true,
+		"tasktype": [
+			2,
+			2
+		],
+		"taskconfig": [
+			{
+				"tasktype": 2,
+				"learningmodelinferencetaskconfig": {
+					"modeltype": 2,
+					"cpumodelfile": "/apollo/modules/planning/data/model/cpu_test_model_cnn_lstm.json",
+					"gpumodelfile": "/apollo/modules/planning/data/model/gpu_test_model_cnn_lstm.json",
+					"usecuda": true
+				}
+			},
+			{
+				"tasktype": 2,
+				"learningmodelinferencetrajectorytaskconfig": {
+					"minadcfuturetrajectorytimelength": 1.8
+				}
+			}
+		]
+	}
+}

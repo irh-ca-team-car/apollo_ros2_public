@@ -1,0 +1,44 @@
+{
+	"vehicleparam": {
+		"brand": 0,
+		"vehicleid": {
+			"otheruniqueid": "mkz7"
+		},
+		"frontedgetocenter": 3.89,
+		"backedgetocenter": 1.043,
+		"leftedgetocenter": 1.055,
+		"rightedgetocenter": 1.055,
+		"length": 4.933,
+		"width": 2.11,
+		"height": 1.48,
+		"minturnradius": 5.05386147161,
+		"maxacceleration": 2,
+		"maxdeceleration": -6,
+		"maxsteerangle": 8.20304748437,
+		"maxsteeranglerate": 8.55211,
+		"steerratio": 16,
+		"wheelbase": 2.8448,
+		"wheelrollingradius": 0.335,
+		"maxabsspeedwhenstopped": 0.2,
+		"brakedeadzone": 14.5,
+		"throttledeadzone": 15.4,
+		"steeringlatencyparam": {
+			"deadtime": 0.1,
+			"risetime": 0.17,
+			"peaktime": 0,
+			"settlingtime": 0
+		},
+		"throttlelatencyparam": {
+			"deadtime": 0.03,
+			"risetime": 0,
+			"peaktime": 0,
+			"settlingtime": 0
+		},
+		"brakelatencyparam": {
+			"deadtime": 0,
+			"risetime": 0,
+			"peaktime": 0,
+			"settlingtime": 0
+		}
+	}
+}

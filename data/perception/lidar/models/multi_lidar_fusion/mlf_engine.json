@@ -1,0 +1,11 @@
+{
+    "mainsensor": "velodyne128",
+    "usehistogramformatch" : true,
+    "histogrambinsize" : 10,
+    "outputpredict_objects" : false,
+    "reservedinvisibletime" : 0.3,
+    "useframetimestamp" : true
+
+}
+
+

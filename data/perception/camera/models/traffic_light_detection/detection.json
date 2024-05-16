@@ -1,0 +1,17 @@
+{
+	"mincropsize": 270,
+	"cropmethod": 0,
+	"meanr": 122.7717,
+	"meang": 115.9465,
+	"meanb": 102.9801,
+	"isbgr": true,
+	"cropscale": 2.5,
+	"inputblobname": "img",
+	"imparamblobname": "im_info",
+	"outputblobname": "bboxes",
+	"modelname": "./",
+	"modeltype": "RTNet",
+	"protofile": "deploy.prototxt",
+	"weightfile": "baidu_iter_140000.caffemodel",
+	"maxbatchsize": 1
+}

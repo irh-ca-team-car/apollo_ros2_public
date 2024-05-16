@@ -1,0 +1,45 @@
+#include "adapter/serialization/apollo_msgs/apollocommon_point3_d.hpp"
+namespace apollo_msgs::msg {
+    nlohmann::json to_json (const ApollocommonPoint3D &msg) {
+        nlohmann::json obj;
+        obj["x"] = (msg.x);
+        obj["y"] = (msg.y);
+        obj["z"] = (msg.z);
+        return obj;
+    }
+    ApollocommonPoint3D from_json_ApollocommonPoint3D (nlohmann::json obj) {
+        ApollocommonPoint3D msg;
+        if(obj.contains("x"))
+        {
+            msg.x = (obj["x"].is_string()?atof(obj["x"].get<std::string>().c_str()):obj["x"].get<double>());
+        }
+        if(obj.contains("y"))
+        {
+            msg.y = (obj["y"].is_string()?atof(obj["y"].get<std::string>().c_str()):obj["y"].get<double>());
+        }
+        if(obj.contains("z"))
+        {
+            msg.z = (obj["z"].is_string()?atof(obj["z"].get<std::string>().c_str()):obj["z"].get<double>());
+        }
+        return msg;
+    }
+    template <>
+    ApollocommonPoint3D from_json<ApollocommonPoint3D>(nlohmann::json obj){
+        return from_json_ApollocommonPoint3D(obj);
+    }
+    nlohmann::json &operator>>(nlohmann::json &os, ApollocommonPoint3D &dt)
+    {
+        dt=from_json_ApollocommonPoint3D(os);
+        return os;
+    }
+    std::ostream & operator<<(std::ostream & os, const ApollocommonPoint3D & dt)
+    {
+        os << to_json(dt);
+        return os;
+    }
+    close_after_if_not_null & operator<<(close_after_if_not_null & os, const ApollocommonPoint3D & dt)
+    {
+        os << to_json(dt);
+        return os;
+    }
+}

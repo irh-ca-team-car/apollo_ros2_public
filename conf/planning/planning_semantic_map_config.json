@@ -1,0 +1,14 @@
+{
+	"resolution": 0.2,
+	"height": 200,
+	"width": 200,
+	"egoidxx": 100,
+	"egoidxy": 160,
+	"maxranddeltaphi": 25,
+	"maxegofuturehorizon": 2,
+	"maxegopasthorizon": 6,
+	"maxobsfuturehorizon": 2,
+	"maxobspasthorizon": 1,
+	"basemappadding": 100,
+	"citydrivingmaxspeed": 22.22
+}

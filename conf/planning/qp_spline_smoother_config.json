@@ -1,0 +1,16 @@
+{
+	"maxconstraintinterval": 5,
+	"longitudinalboundarybound": 2,
+	"maxlateralboundarybound": 0.5,
+	"minlateralboundarybound": 0.1,
+	"numoftotalpoints": 500,
+	"curbshift": 0.2,
+	"lateralbuffer": 0.2,
+	"qpspline": {
+		"splineorder": 5,
+		"maxsplinelength": 25,
+		"regularizationweight": 0.00001,
+		"secondderivativeweight": 200,
+		"thirdderivativeweight": 1000
+	}
+}
